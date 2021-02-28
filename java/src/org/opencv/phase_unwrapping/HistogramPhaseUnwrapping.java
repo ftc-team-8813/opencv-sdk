@@ -5,6 +5,7 @@ package org.opencv.phase_unwrapping;
 
 import org.opencv.core.Mat;
 import org.opencv.phase_unwrapping.HistogramPhaseUnwrapping;
+import org.opencv.phase_unwrapping.HistogramPhaseUnwrapping_Params;
 
 // C++: class HistogramPhaseUnwrapping
 /**
@@ -33,10 +34,20 @@ public class HistogramPhaseUnwrapping extends PhaseUnwrapping {
     /**
      * Constructor
      *
+     * @param parameters HistogramPhaseUnwrapping parameters HistogramPhaseUnwrapping::Params: width,height of the phase map and histogram characteristics.
+     * @return automatically generated
+     */
+    public static HistogramPhaseUnwrapping create(HistogramPhaseUnwrapping_Params parameters) {
+        return HistogramPhaseUnwrapping.__fromPtr__(create_0(parameters.nativeObj));
+    }
+
+    /**
+     * Constructor
+     *
      * @return automatically generated
      */
     public static HistogramPhaseUnwrapping create() {
-        return HistogramPhaseUnwrapping.__fromPtr__(create_0());
+        return HistogramPhaseUnwrapping.__fromPtr__(create_1());
     }
 
 
@@ -62,7 +73,8 @@ public class HistogramPhaseUnwrapping extends PhaseUnwrapping {
 
 
     // C++: static Ptr_HistogramPhaseUnwrapping cv::phase_unwrapping::HistogramPhaseUnwrapping::create(HistogramPhaseUnwrapping_Params parameters = HistogramPhaseUnwrapping::Params())
-    private static native long create_0();
+    private static native long create_0(long parameters_nativeObj);
+    private static native long create_1();
 
     // C++:  void cv::phase_unwrapping::HistogramPhaseUnwrapping::getInverseReliabilityMap(Mat& reliabilityMap)
     private static native void getInverseReliabilityMap_0(long nativeObj, long reliabilityMap_nativeObj);

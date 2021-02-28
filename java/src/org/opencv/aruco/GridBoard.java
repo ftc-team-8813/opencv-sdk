@@ -23,6 +23,53 @@ public class GridBoard extends Board {
     public static GridBoard __fromPtr__(long addr) { return new GridBoard(addr); }
 
     //
+    // C++:  void cv::aruco::GridBoard::draw(Size outSize, Mat& img, int marginSize = 0, int borderBits = 1)
+    //
+
+    /**
+     * Draw a GridBoard
+     *
+     * @param outSize size of the output image in pixels.
+     * @param img output image with the board. The size of this image will be outSize
+     * and the board will be on the center, keeping the board proportions.
+     * @param marginSize minimum margins (in pixels) of the board in the output image
+     * @param borderBits width of the marker borders.
+     *
+     * This function return the image of the GridBoard, ready to be printed.
+     */
+    public void draw(Size outSize, Mat img, int marginSize, int borderBits) {
+        draw_0(nativeObj, outSize.width, outSize.height, img.nativeObj, marginSize, borderBits);
+    }
+
+    /**
+     * Draw a GridBoard
+     *
+     * @param outSize size of the output image in pixels.
+     * @param img output image with the board. The size of this image will be outSize
+     * and the board will be on the center, keeping the board proportions.
+     * @param marginSize minimum margins (in pixels) of the board in the output image
+     *
+     * This function return the image of the GridBoard, ready to be printed.
+     */
+    public void draw(Size outSize, Mat img, int marginSize) {
+        draw_1(nativeObj, outSize.width, outSize.height, img.nativeObj, marginSize);
+    }
+
+    /**
+     * Draw a GridBoard
+     *
+     * @param outSize size of the output image in pixels.
+     * @param img output image with the board. The size of this image will be outSize
+     * and the board will be on the center, keeping the board proportions.
+     *
+     * This function return the image of the GridBoard, ready to be printed.
+     */
+    public void draw(Size outSize, Mat img) {
+        draw_2(nativeObj, outSize.width, outSize.height, img.nativeObj);
+    }
+
+
+    //
     // C++: static Ptr_GridBoard cv::aruco::GridBoard::create(int markersX, int markersY, float markerLength, float markerSeparation, Ptr_Dictionary dictionary, int firstMarker = 0)
     //
 
@@ -89,59 +136,17 @@ public class GridBoard extends Board {
     }
 
 
-    //
-    // C++:  void cv::aruco::GridBoard::draw(Size outSize, Mat& img, int marginSize = 0, int borderBits = 1)
-    //
-
-    /**
-     * Draw a GridBoard
-     *
-     * @param outSize size of the output image in pixels.
-     * @param img output image with the board. The size of this image will be outSize
-     * and the board will be on the center, keeping the board proportions.
-     * @param marginSize minimum margins (in pixels) of the board in the output image
-     * @param borderBits width of the marker borders.
-     *
-     * This function return the image of the GridBoard, ready to be printed.
-     */
-    public void draw(Size outSize, Mat img, int marginSize, int borderBits) {
-        draw_0(nativeObj, outSize.width, outSize.height, img.nativeObj, marginSize, borderBits);
-    }
-
-    /**
-     * Draw a GridBoard
-     *
-     * @param outSize size of the output image in pixels.
-     * @param img output image with the board. The size of this image will be outSize
-     * and the board will be on the center, keeping the board proportions.
-     * @param marginSize minimum margins (in pixels) of the board in the output image
-     *
-     * This function return the image of the GridBoard, ready to be printed.
-     */
-    public void draw(Size outSize, Mat img, int marginSize) {
-        draw_1(nativeObj, outSize.width, outSize.height, img.nativeObj, marginSize);
-    }
-
-    /**
-     * Draw a GridBoard
-     *
-     * @param outSize size of the output image in pixels.
-     * @param img output image with the board. The size of this image will be outSize
-     * and the board will be on the center, keeping the board proportions.
-     *
-     * This function return the image of the GridBoard, ready to be printed.
-     */
-    public void draw(Size outSize, Mat img) {
-        draw_2(nativeObj, outSize.width, outSize.height, img.nativeObj);
-    }
-
-
     @Override
     protected void finalize() throws Throwable {
         delete(nativeObj);
     }
 
 
+
+    // C++:  void cv::aruco::GridBoard::draw(Size outSize, Mat& img, int marginSize = 0, int borderBits = 1)
+    private static native void draw_0(long nativeObj, double outSize_width, double outSize_height, long img_nativeObj, int marginSize, int borderBits);
+    private static native void draw_1(long nativeObj, double outSize_width, double outSize_height, long img_nativeObj, int marginSize);
+    private static native void draw_2(long nativeObj, double outSize_width, double outSize_height, long img_nativeObj);
 
     // C++: static Ptr_GridBoard cv::aruco::GridBoard::create(int markersX, int markersY, float markerLength, float markerSeparation, Ptr_Dictionary dictionary, int firstMarker = 0)
     private static native long create_0(int markersX, int markersY, float markerLength, float markerSeparation, long dictionary_nativeObj, int firstMarker);
@@ -155,11 +160,6 @@ public class GridBoard extends Board {
 
     // C++:  float cv::aruco::GridBoard::getMarkerSeparation()
     private static native float getMarkerSeparation_0(long nativeObj);
-
-    // C++:  void cv::aruco::GridBoard::draw(Size outSize, Mat& img, int marginSize = 0, int borderBits = 1)
-    private static native void draw_0(long nativeObj, double outSize_width, double outSize_height, long img_nativeObj, int marginSize, int borderBits);
-    private static native void draw_1(long nativeObj, double outSize_width, double outSize_height, long img_nativeObj, int marginSize);
-    private static native void draw_2(long nativeObj, double outSize_width, double outSize_height, long img_nativeObj);
 
     // native support for java finalize()
     private static native void delete(long nativeObj);

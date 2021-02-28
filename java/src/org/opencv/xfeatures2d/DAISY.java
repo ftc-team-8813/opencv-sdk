@@ -31,7 +31,7 @@ public class DAISY extends Feature2D {
     // internal usage only
     public static DAISY __fromPtr__(long addr) { return new DAISY(addr); }
 
-    // C++: enum NormalizationType
+    // C++: enum NormalizationType (cv.xfeatures2d.DAISY.NormalizationType)
     public static final int
             NRM_NONE = 100,
             NRM_PARTIAL = 101,

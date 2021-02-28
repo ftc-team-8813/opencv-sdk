@@ -37,6 +37,70 @@ public class OCRTesseract extends BaseOCR {
     public static OCRTesseract __fromPtr__(long addr) { return new OCRTesseract(addr); }
 
     //
+    // C++:  String cv::text::OCRTesseract::run(Mat image, int min_confidence, int component_level = 0)
+    //
+
+    /**
+     * Recognize text using the tesseract-ocr API.
+     *
+     *     Takes image on input and returns recognized text in the output_text parameter. Optionally
+     *     provides also the Rects for individual text elements found (e.g. words), and the list of those
+     *     text elements with their confidence values.
+     *
+     *     @param image Input image CV_8UC1 or CV_8UC3
+     *     text elements found (e.g. words or text lines).
+     *     recognition of individual text elements found (e.g. words or text lines).
+     *     for the recognition of individual text elements found (e.g. words or text lines).
+     *     @param component_level OCR_LEVEL_WORD (by default), or OCR_LEVEL_TEXTLINE.
+     * @param min_confidence automatically generated
+     * @return automatically generated
+     */
+    public String run(Mat image, int min_confidence, int component_level) {
+        return run_0(nativeObj, image.nativeObj, min_confidence, component_level);
+    }
+
+    /**
+     * Recognize text using the tesseract-ocr API.
+     *
+     *     Takes image on input and returns recognized text in the output_text parameter. Optionally
+     *     provides also the Rects for individual text elements found (e.g. words), and the list of those
+     *     text elements with their confidence values.
+     *
+     *     @param image Input image CV_8UC1 or CV_8UC3
+     *     text elements found (e.g. words or text lines).
+     *     recognition of individual text elements found (e.g. words or text lines).
+     *     for the recognition of individual text elements found (e.g. words or text lines).
+     * @param min_confidence automatically generated
+     * @return automatically generated
+     */
+    public String run(Mat image, int min_confidence) {
+        return run_1(nativeObj, image.nativeObj, min_confidence);
+    }
+
+
+    //
+    // C++:  String cv::text::OCRTesseract::run(Mat image, Mat mask, int min_confidence, int component_level = 0)
+    //
+
+    public String run(Mat image, Mat mask, int min_confidence, int component_level) {
+        return run_2(nativeObj, image.nativeObj, mask.nativeObj, min_confidence, component_level);
+    }
+
+    public String run(Mat image, Mat mask, int min_confidence) {
+        return run_3(nativeObj, image.nativeObj, mask.nativeObj, min_confidence);
+    }
+
+
+    //
+    // C++:  void cv::text::OCRTesseract::setWhiteList(String char_whitelist)
+    //
+
+    public void setWhiteList(String char_whitelist) {
+        setWhiteList_0(nativeObj, char_whitelist);
+    }
+
+
+    //
     // C++: static Ptr_OCRTesseract cv::text::OCRTesseract::create(c_string datapath = 0, c_string language = 0, c_string char_whitelist = 0, int oem = OEM_DEFAULT, int psmode = PSM_AUTO)
     //
 
@@ -146,76 +210,23 @@ public class OCRTesseract extends BaseOCR {
     }
 
 
-    //
-    // C++:  String cv::text::OCRTesseract::run(Mat image, Mat mask, int min_confidence, int component_level = 0)
-    //
-
-    public String run(Mat image, Mat mask, int min_confidence, int component_level) {
-        return run_0(nativeObj, image.nativeObj, mask.nativeObj, min_confidence, component_level);
-    }
-
-    public String run(Mat image, Mat mask, int min_confidence) {
-        return run_1(nativeObj, image.nativeObj, mask.nativeObj, min_confidence);
-    }
-
-
-    //
-    // C++:  String cv::text::OCRTesseract::run(Mat image, int min_confidence, int component_level = 0)
-    //
-
-    /**
-     * Recognize text using the tesseract-ocr API.
-     *
-     *     Takes image on input and returns recognized text in the output_text parameter. Optionally
-     *     provides also the Rects for individual text elements found (e.g. words), and the list of those
-     *     text elements with their confidence values.
-     *
-     *     @param image Input image CV_8UC1 or CV_8UC3
-     *     text elements found (e.g. words or text lines).
-     *     recognition of individual text elements found (e.g. words or text lines).
-     *     for the recognition of individual text elements found (e.g. words or text lines).
-     *     @param component_level OCR_LEVEL_WORD (by default), or OCR_LEVEL_TEXTLINE.
-     * @param min_confidence automatically generated
-     * @return automatically generated
-     */
-    public String run(Mat image, int min_confidence, int component_level) {
-        return run_2(nativeObj, image.nativeObj, min_confidence, component_level);
-    }
-
-    /**
-     * Recognize text using the tesseract-ocr API.
-     *
-     *     Takes image on input and returns recognized text in the output_text parameter. Optionally
-     *     provides also the Rects for individual text elements found (e.g. words), and the list of those
-     *     text elements with their confidence values.
-     *
-     *     @param image Input image CV_8UC1 or CV_8UC3
-     *     text elements found (e.g. words or text lines).
-     *     recognition of individual text elements found (e.g. words or text lines).
-     *     for the recognition of individual text elements found (e.g. words or text lines).
-     * @param min_confidence automatically generated
-     * @return automatically generated
-     */
-    public String run(Mat image, int min_confidence) {
-        return run_3(nativeObj, image.nativeObj, min_confidence);
-    }
-
-
-    //
-    // C++:  void cv::text::OCRTesseract::setWhiteList(String char_whitelist)
-    //
-
-    public void setWhiteList(String char_whitelist) {
-        setWhiteList_0(nativeObj, char_whitelist);
-    }
-
-
     @Override
     protected void finalize() throws Throwable {
         delete(nativeObj);
     }
 
 
+
+    // C++:  String cv::text::OCRTesseract::run(Mat image, int min_confidence, int component_level = 0)
+    private static native String run_0(long nativeObj, long image_nativeObj, int min_confidence, int component_level);
+    private static native String run_1(long nativeObj, long image_nativeObj, int min_confidence);
+
+    // C++:  String cv::text::OCRTesseract::run(Mat image, Mat mask, int min_confidence, int component_level = 0)
+    private static native String run_2(long nativeObj, long image_nativeObj, long mask_nativeObj, int min_confidence, int component_level);
+    private static native String run_3(long nativeObj, long image_nativeObj, long mask_nativeObj, int min_confidence);
+
+    // C++:  void cv::text::OCRTesseract::setWhiteList(String char_whitelist)
+    private static native void setWhiteList_0(long nativeObj, String char_whitelist);
 
     // C++: static Ptr_OCRTesseract cv::text::OCRTesseract::create(c_string datapath = 0, c_string language = 0, c_string char_whitelist = 0, int oem = OEM_DEFAULT, int psmode = PSM_AUTO)
     private static native long create_0(String datapath, String language, String char_whitelist, int oem, int psmode);
@@ -224,17 +235,6 @@ public class OCRTesseract extends BaseOCR {
     private static native long create_3(String datapath, String language);
     private static native long create_4(String datapath);
     private static native long create_5();
-
-    // C++:  String cv::text::OCRTesseract::run(Mat image, Mat mask, int min_confidence, int component_level = 0)
-    private static native String run_0(long nativeObj, long image_nativeObj, long mask_nativeObj, int min_confidence, int component_level);
-    private static native String run_1(long nativeObj, long image_nativeObj, long mask_nativeObj, int min_confidence);
-
-    // C++:  String cv::text::OCRTesseract::run(Mat image, int min_confidence, int component_level = 0)
-    private static native String run_2(long nativeObj, long image_nativeObj, int min_confidence, int component_level);
-    private static native String run_3(long nativeObj, long image_nativeObj, int min_confidence);
-
-    // C++:  void cv::text::OCRTesseract::setWhiteList(String char_whitelist)
-    private static native void setWhiteList_0(long nativeObj, String char_whitelist);
 
     // native support for java finalize()
     private static native void delete(long nativeObj);

@@ -20,6 +20,39 @@ public class StandardCollector extends PredictCollector {
     public static StandardCollector __fromPtr__(long addr) { return new StandardCollector(addr); }
 
     //
+    // C++:  int cv::face::StandardCollector::getMinLabel()
+    //
+
+    /**
+     * Returns label with minimal distance
+     * @return automatically generated
+     */
+    public int getMinLabel() {
+        return getMinLabel_0(nativeObj);
+    }
+
+
+    //
+    // C++:  double cv::face::StandardCollector::getMinDist()
+    //
+
+    /**
+     * Returns minimal distance value
+     * @return automatically generated
+     */
+    public double getMinDist() {
+        return getMinDist_0(nativeObj);
+    }
+
+
+    //
+    // C++:  vector_pair_int_and_double cv::face::StandardCollector::getResults(bool sorted = false)
+    //
+
+    // Return type 'vector_pair_int_and_double' is not supported, skipping the function
+
+
+    //
     // C++: static Ptr_StandardCollector cv::face::StandardCollector::create(double threshold = DBL_MAX)
     //
 
@@ -41,39 +74,6 @@ public class StandardCollector extends PredictCollector {
     }
 
 
-    //
-    // C++:  double cv::face::StandardCollector::getMinDist()
-    //
-
-    /**
-     * Returns minimal distance value
-     * @return automatically generated
-     */
-    public double getMinDist() {
-        return getMinDist_0(nativeObj);
-    }
-
-
-    //
-    // C++:  int cv::face::StandardCollector::getMinLabel()
-    //
-
-    /**
-     * Returns label with minimal distance
-     * @return automatically generated
-     */
-    public int getMinLabel() {
-        return getMinLabel_0(nativeObj);
-    }
-
-
-    //
-    // C++:  vector_pair_int_and_double cv::face::StandardCollector::getResults(bool sorted = false)
-    //
-
-    // Return type 'vector_pair_int_and_double' is not supported, skipping the function
-
-
     @Override
     protected void finalize() throws Throwable {
         delete(nativeObj);
@@ -81,15 +81,15 @@ public class StandardCollector extends PredictCollector {
 
 
 
-    // C++: static Ptr_StandardCollector cv::face::StandardCollector::create(double threshold = DBL_MAX)
-    private static native long create_0(double threshold);
-    private static native long create_1();
+    // C++:  int cv::face::StandardCollector::getMinLabel()
+    private static native int getMinLabel_0(long nativeObj);
 
     // C++:  double cv::face::StandardCollector::getMinDist()
     private static native double getMinDist_0(long nativeObj);
 
-    // C++:  int cv::face::StandardCollector::getMinLabel()
-    private static native int getMinLabel_0(long nativeObj);
+    // C++: static Ptr_StandardCollector cv::face::StandardCollector::create(double threshold = DBL_MAX)
+    private static native long create_0(double threshold);
+    private static native long create_1();
 
     // native support for java finalize()
     private static native void delete(long nativeObj);

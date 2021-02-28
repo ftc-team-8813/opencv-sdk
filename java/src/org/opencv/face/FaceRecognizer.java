@@ -136,153 +136,6 @@ public class FaceRecognizer extends Algorithm {
     public static FaceRecognizer __fromPtr__(long addr) { return new FaceRecognizer(addr); }
 
     //
-    // C++:  String cv::face::FaceRecognizer::getLabelInfo(int label)
-    //
-
-    /**
-     * Gets string information by label.
-     *
-     *     If an unknown label id is provided or there is no label information associated with the specified
-     *     label id the method returns an empty string.
-     * @param label automatically generated
-     * @return automatically generated
-     */
-    public String getLabelInfo(int label) {
-        return getLabelInfo_0(nativeObj, label);
-    }
-
-
-    //
-    // C++:  int cv::face::FaceRecognizer::predict(Mat src)
-    //
-
-    public int predict_label(Mat src) {
-        return predict_label_0(nativeObj, src.nativeObj);
-    }
-
-
-    //
-    // C++:  vector_int cv::face::FaceRecognizer::getLabelsByString(String str)
-    //
-
-    /**
-     * Gets vector of labels by string.
-     *
-     *     The function searches for the labels containing the specified sub-string in the associated string
-     *     info.
-     * @param str automatically generated
-     * @return automatically generated
-     */
-    public MatOfInt getLabelsByString(String str) {
-        return MatOfInt.fromNativeAddr(getLabelsByString_0(nativeObj, str));
-    }
-
-
-    //
-    // C++:  void cv::face::FaceRecognizer::predict(Mat src, Ptr_PredictCollector collector)
-    //
-
-    /**
-     * <ul>
-     *   <li>
-     *  if implemented - send all result of prediction to collector that can be used for somehow custom result handling
-     *     @param src Sample image to get a prediction from.
-     *     @param collector User-defined collector object that accepts all results
-     *   </li>
-     * </ul>
-     *
-     *     To implement this method u just have to do same internal cycle as in predict(InputArray src, CV_OUT int &amp;label, CV_OUT double &amp;confidence) but
-     *     not try to get "best@ result, just resend it to caller side with given collector
-     */
-    public void predict_collect(Mat src, PredictCollector collector) {
-        predict_collect_0(nativeObj, src.nativeObj, collector.getNativeObjAddr());
-    }
-
-
-    //
-    // C++:  void cv::face::FaceRecognizer::predict(Mat src, int& label, double& confidence)
-    //
-
-    /**
-     * Predicts a label and associated confidence (e.g. distance) for a given input image.
-     *
-     *     @param src Sample image to get a prediction from.
-     *     @param label The predicted label for the given image.
-     *     @param confidence Associated confidence (e.g. distance) for the predicted label.
-     *
-     *     The suffix const means that prediction does not affect the internal model state, so the method can
-     *     be safely called from within different threads.
-     *
-     *     The following example shows how to get a prediction from a trained model:
-     *
-     *     <code>
-     *     using namespace cv;
-     *     // Do your initialization here (create the cv::FaceRecognizer model) ...
-     *     // ...
-     *     // Read in a sample image:
-     *     Mat img = imread("person1/3.jpg", IMREAD_GRAYSCALE);
-     *     // And get a prediction from the cv::FaceRecognizer:
-     *     int predicted = model-&gt;predict(img);
-     *     </code>
-     *
-     *     Or to get a prediction and the associated confidence (e.g. distance):
-     *
-     *     <code>
-     *     using namespace cv;
-     *     // Do your initialization here (create the cv::FaceRecognizer model) ...
-     *     // ...
-     *     Mat img = imread("person1/3.jpg", IMREAD_GRAYSCALE);
-     *     // Some variables for the predicted label and associated confidence (e.g. distance):
-     *     int predicted_label = -1;
-     *     double predicted_confidence = 0.0;
-     *     // Get the prediction and associated confidence from the model
-     *     model-&gt;predict(img, predicted_label, predicted_confidence);
-     *     </code>
-     */
-    public void predict(Mat src, int[] label, double[] confidence) {
-        double[] label_out = new double[1];
-        double[] confidence_out = new double[1];
-        predict_0(nativeObj, src.nativeObj, label_out, confidence_out);
-        if(label!=null) label[0] = (int)label_out[0];
-        if(confidence!=null) confidence[0] = (double)confidence_out[0];
-    }
-
-
-    //
-    // C++:  void cv::face::FaceRecognizer::read(String filename)
-    //
-
-    /**
-     * Loads a FaceRecognizer and its model state.
-     *
-     *     Loads a persisted model and state from a given XML or YAML file . Every FaceRecognizer has to
-     *     overwrite FaceRecognizer::load(FileStorage&amp; fs) to enable loading the model state.
-     *     FaceRecognizer::load(FileStorage&amp; fs) in turn gets called by
-     *     FaceRecognizer::load(const String&amp; filename), to ease saving a model.
-     * @param filename automatically generated
-     */
-    public void read(String filename) {
-        read_0(nativeObj, filename);
-    }
-
-
-    //
-    // C++:  void cv::face::FaceRecognizer::setLabelInfo(int label, String strInfo)
-    //
-
-    /**
-     * Sets string info for the specified model's label.
-     *
-     *     The string info is replaced by the provided value if it was set before for the specified label.
-     * @param label automatically generated
-     * @param strInfo automatically generated
-     */
-    public void setLabelInfo(int label, String strInfo) {
-        setLabelInfo_0(nativeObj, label, strInfo);
-    }
-
-
-    //
     // C++:  void cv::face::FaceRecognizer::train(vector_Mat src, Mat labels)
     //
 
@@ -401,6 +254,85 @@ public class FaceRecognizer extends Algorithm {
 
 
     //
+    // C++:  int cv::face::FaceRecognizer::predict(Mat src)
+    //
+
+    public int predict_label(Mat src) {
+        return predict_label_0(nativeObj, src.nativeObj);
+    }
+
+
+    //
+    // C++:  void cv::face::FaceRecognizer::predict(Mat src, int& label, double& confidence)
+    //
+
+    /**
+     * Predicts a label and associated confidence (e.g. distance) for a given input image.
+     *
+     *     @param src Sample image to get a prediction from.
+     *     @param label The predicted label for the given image.
+     *     @param confidence Associated confidence (e.g. distance) for the predicted label.
+     *
+     *     The suffix const means that prediction does not affect the internal model state, so the method can
+     *     be safely called from within different threads.
+     *
+     *     The following example shows how to get a prediction from a trained model:
+     *
+     *     <code>
+     *     using namespace cv;
+     *     // Do your initialization here (create the cv::FaceRecognizer model) ...
+     *     // ...
+     *     // Read in a sample image:
+     *     Mat img = imread("person1/3.jpg", IMREAD_GRAYSCALE);
+     *     // And get a prediction from the cv::FaceRecognizer:
+     *     int predicted = model-&gt;predict(img);
+     *     </code>
+     *
+     *     Or to get a prediction and the associated confidence (e.g. distance):
+     *
+     *     <code>
+     *     using namespace cv;
+     *     // Do your initialization here (create the cv::FaceRecognizer model) ...
+     *     // ...
+     *     Mat img = imread("person1/3.jpg", IMREAD_GRAYSCALE);
+     *     // Some variables for the predicted label and associated confidence (e.g. distance):
+     *     int predicted_label = -1;
+     *     double predicted_confidence = 0.0;
+     *     // Get the prediction and associated confidence from the model
+     *     model-&gt;predict(img, predicted_label, predicted_confidence);
+     *     </code>
+     */
+    public void predict(Mat src, int[] label, double[] confidence) {
+        double[] label_out = new double[1];
+        double[] confidence_out = new double[1];
+        predict_0(nativeObj, src.nativeObj, label_out, confidence_out);
+        if(label!=null) label[0] = (int)label_out[0];
+        if(confidence!=null) confidence[0] = (double)confidence_out[0];
+    }
+
+
+    //
+    // C++:  void cv::face::FaceRecognizer::predict(Mat src, Ptr_PredictCollector collector)
+    //
+
+    /**
+     * <ul>
+     *   <li>
+     *  if implemented - send all result of prediction to collector that can be used for somehow custom result handling
+     *     @param src Sample image to get a prediction from.
+     *     @param collector User-defined collector object that accepts all results
+     *   </li>
+     * </ul>
+     *
+     *     To implement this method u just have to do same internal cycle as in predict(InputArray src, CV_OUT int &amp;label, CV_OUT double &amp;confidence) but
+     *     not try to get "best@ result, just resend it to caller side with given collector
+     */
+    public void predict_collect(Mat src, PredictCollector collector) {
+        predict_collect_0(nativeObj, src.nativeObj, collector.getNativeObjAddr());
+    }
+
+
+    //
     // C++:  void cv::face::FaceRecognizer::write(String filename)
     //
 
@@ -422,6 +354,74 @@ public class FaceRecognizer extends Algorithm {
     }
 
 
+    //
+    // C++:  void cv::face::FaceRecognizer::read(String filename)
+    //
+
+    /**
+     * Loads a FaceRecognizer and its model state.
+     *
+     *     Loads a persisted model and state from a given XML or YAML file . Every FaceRecognizer has to
+     *     overwrite FaceRecognizer::load(FileStorage&amp; fs) to enable loading the model state.
+     *     FaceRecognizer::load(FileStorage&amp; fs) in turn gets called by
+     *     FaceRecognizer::load(const String&amp; filename), to ease saving a model.
+     * @param filename automatically generated
+     */
+    public void read(String filename) {
+        read_0(nativeObj, filename);
+    }
+
+
+    //
+    // C++:  void cv::face::FaceRecognizer::setLabelInfo(int label, String strInfo)
+    //
+
+    /**
+     * Sets string info for the specified model's label.
+     *
+     *     The string info is replaced by the provided value if it was set before for the specified label.
+     * @param label automatically generated
+     * @param strInfo automatically generated
+     */
+    public void setLabelInfo(int label, String strInfo) {
+        setLabelInfo_0(nativeObj, label, strInfo);
+    }
+
+
+    //
+    // C++:  String cv::face::FaceRecognizer::getLabelInfo(int label)
+    //
+
+    /**
+     * Gets string information by label.
+     *
+     *     If an unknown label id is provided or there is no label information associated with the specified
+     *     label id the method returns an empty string.
+     * @param label automatically generated
+     * @return automatically generated
+     */
+    public String getLabelInfo(int label) {
+        return getLabelInfo_0(nativeObj, label);
+    }
+
+
+    //
+    // C++:  vector_int cv::face::FaceRecognizer::getLabelsByString(String str)
+    //
+
+    /**
+     * Gets vector of labels by string.
+     *
+     *     The function searches for the labels containing the specified sub-string in the associated string
+     *     info.
+     * @param str automatically generated
+     * @return automatically generated
+     */
+    public MatOfInt getLabelsByString(String str) {
+        return MatOfInt.fromNativeAddr(getLabelsByString_0(nativeObj, str));
+    }
+
+
     @Override
     protected void finalize() throws Throwable {
         delete(nativeObj);
@@ -429,20 +429,23 @@ public class FaceRecognizer extends Algorithm {
 
 
 
-    // C++:  String cv::face::FaceRecognizer::getLabelInfo(int label)
-    private static native String getLabelInfo_0(long nativeObj, int label);
+    // C++:  void cv::face::FaceRecognizer::train(vector_Mat src, Mat labels)
+    private static native void train_0(long nativeObj, long src_mat_nativeObj, long labels_nativeObj);
+
+    // C++:  void cv::face::FaceRecognizer::update(vector_Mat src, Mat labels)
+    private static native void update_0(long nativeObj, long src_mat_nativeObj, long labels_nativeObj);
 
     // C++:  int cv::face::FaceRecognizer::predict(Mat src)
     private static native int predict_label_0(long nativeObj, long src_nativeObj);
 
-    // C++:  vector_int cv::face::FaceRecognizer::getLabelsByString(String str)
-    private static native long getLabelsByString_0(long nativeObj, String str);
+    // C++:  void cv::face::FaceRecognizer::predict(Mat src, int& label, double& confidence)
+    private static native void predict_0(long nativeObj, long src_nativeObj, double[] label_out, double[] confidence_out);
 
     // C++:  void cv::face::FaceRecognizer::predict(Mat src, Ptr_PredictCollector collector)
     private static native void predict_collect_0(long nativeObj, long src_nativeObj, long collector_nativeObj);
 
-    // C++:  void cv::face::FaceRecognizer::predict(Mat src, int& label, double& confidence)
-    private static native void predict_0(long nativeObj, long src_nativeObj, double[] label_out, double[] confidence_out);
+    // C++:  void cv::face::FaceRecognizer::write(String filename)
+    private static native void write_0(long nativeObj, String filename);
 
     // C++:  void cv::face::FaceRecognizer::read(String filename)
     private static native void read_0(long nativeObj, String filename);
@@ -450,14 +453,11 @@ public class FaceRecognizer extends Algorithm {
     // C++:  void cv::face::FaceRecognizer::setLabelInfo(int label, String strInfo)
     private static native void setLabelInfo_0(long nativeObj, int label, String strInfo);
 
-    // C++:  void cv::face::FaceRecognizer::train(vector_Mat src, Mat labels)
-    private static native void train_0(long nativeObj, long src_mat_nativeObj, long labels_nativeObj);
+    // C++:  String cv::face::FaceRecognizer::getLabelInfo(int label)
+    private static native String getLabelInfo_0(long nativeObj, int label);
 
-    // C++:  void cv::face::FaceRecognizer::update(vector_Mat src, Mat labels)
-    private static native void update_0(long nativeObj, long src_mat_nativeObj, long labels_nativeObj);
-
-    // C++:  void cv::face::FaceRecognizer::write(String filename)
-    private static native void write_0(long nativeObj, String filename);
+    // C++:  vector_int cv::face::FaceRecognizer::getLabelsByString(String str)
+    private static native long getLabelsByString_0(long nativeObj, String str);
 
     // native support for java finalize()
     private static native void delete(long nativeObj);

@@ -19,20 +19,6 @@ public class SimpleWB extends WhiteBalancer {
     public static SimpleWB __fromPtr__(long addr) { return new SimpleWB(addr); }
 
     //
-    // C++:  float cv::xphoto::SimpleWB::getInputMax()
-    //
-
-    /**
-     * Input image range maximum value
-     * SEE: setInputMax
-     * @return automatically generated
-     */
-    public float getInputMax() {
-        return getInputMax_0(nativeObj);
-    }
-
-
-    //
     // C++:  float cv::xphoto::SimpleWB::getInputMin()
     //
 
@@ -47,16 +33,42 @@ public class SimpleWB extends WhiteBalancer {
 
 
     //
-    // C++:  float cv::xphoto::SimpleWB::getOutputMax()
+    // C++:  void cv::xphoto::SimpleWB::setInputMin(float val)
     //
 
     /**
-     * Output image range maximum value
-     * SEE: setOutputMax
+     *  getInputMin SEE: getInputMin
+     * @param val automatically generated
+     */
+    public void setInputMin(float val) {
+        setInputMin_0(nativeObj, val);
+    }
+
+
+    //
+    // C++:  float cv::xphoto::SimpleWB::getInputMax()
+    //
+
+    /**
+     * Input image range maximum value
+     * SEE: setInputMax
      * @return automatically generated
      */
-    public float getOutputMax() {
-        return getOutputMax_0(nativeObj);
+    public float getInputMax() {
+        return getInputMax_0(nativeObj);
+    }
+
+
+    //
+    // C++:  void cv::xphoto::SimpleWB::setInputMax(float val)
+    //
+
+    /**
+     *  getInputMax SEE: getInputMax
+     * @param val automatically generated
+     */
+    public void setInputMax(float val) {
+        setInputMax_0(nativeObj, val);
     }
 
 
@@ -75,42 +87,29 @@ public class SimpleWB extends WhiteBalancer {
 
 
     //
-    // C++:  float cv::xphoto::SimpleWB::getP()
+    // C++:  void cv::xphoto::SimpleWB::setOutputMin(float val)
     //
 
     /**
-     * Percent of top/bottom values to ignore
-     * SEE: setP
+     *  getOutputMin SEE: getOutputMin
+     * @param val automatically generated
+     */
+    public void setOutputMin(float val) {
+        setOutputMin_0(nativeObj, val);
+    }
+
+
+    //
+    // C++:  float cv::xphoto::SimpleWB::getOutputMax()
+    //
+
+    /**
+     * Output image range maximum value
+     * SEE: setOutputMax
      * @return automatically generated
      */
-    public float getP() {
-        return getP_0(nativeObj);
-    }
-
-
-    //
-    // C++:  void cv::xphoto::SimpleWB::setInputMax(float val)
-    //
-
-    /**
-     *  getInputMax SEE: getInputMax
-     * @param val automatically generated
-     */
-    public void setInputMax(float val) {
-        setInputMax_0(nativeObj, val);
-    }
-
-
-    //
-    // C++:  void cv::xphoto::SimpleWB::setInputMin(float val)
-    //
-
-    /**
-     *  getInputMin SEE: getInputMin
-     * @param val automatically generated
-     */
-    public void setInputMin(float val) {
-        setInputMin_0(nativeObj, val);
+    public float getOutputMax() {
+        return getOutputMax_0(nativeObj);
     }
 
 
@@ -128,15 +127,16 @@ public class SimpleWB extends WhiteBalancer {
 
 
     //
-    // C++:  void cv::xphoto::SimpleWB::setOutputMin(float val)
+    // C++:  float cv::xphoto::SimpleWB::getP()
     //
 
     /**
-     *  getOutputMin SEE: getOutputMin
-     * @param val automatically generated
+     * Percent of top/bottom values to ignore
+     * SEE: setP
+     * @return automatically generated
      */
-    public void setOutputMin(float val) {
-        setOutputMin_0(nativeObj, val);
+    public float getP() {
+        return getP_0(nativeObj);
     }
 
 
@@ -160,32 +160,32 @@ public class SimpleWB extends WhiteBalancer {
 
 
 
-    // C++:  float cv::xphoto::SimpleWB::getInputMax()
-    private static native float getInputMax_0(long nativeObj);
-
     // C++:  float cv::xphoto::SimpleWB::getInputMin()
     private static native float getInputMin_0(long nativeObj);
-
-    // C++:  float cv::xphoto::SimpleWB::getOutputMax()
-    private static native float getOutputMax_0(long nativeObj);
-
-    // C++:  float cv::xphoto::SimpleWB::getOutputMin()
-    private static native float getOutputMin_0(long nativeObj);
-
-    // C++:  float cv::xphoto::SimpleWB::getP()
-    private static native float getP_0(long nativeObj);
-
-    // C++:  void cv::xphoto::SimpleWB::setInputMax(float val)
-    private static native void setInputMax_0(long nativeObj, float val);
 
     // C++:  void cv::xphoto::SimpleWB::setInputMin(float val)
     private static native void setInputMin_0(long nativeObj, float val);
 
-    // C++:  void cv::xphoto::SimpleWB::setOutputMax(float val)
-    private static native void setOutputMax_0(long nativeObj, float val);
+    // C++:  float cv::xphoto::SimpleWB::getInputMax()
+    private static native float getInputMax_0(long nativeObj);
+
+    // C++:  void cv::xphoto::SimpleWB::setInputMax(float val)
+    private static native void setInputMax_0(long nativeObj, float val);
+
+    // C++:  float cv::xphoto::SimpleWB::getOutputMin()
+    private static native float getOutputMin_0(long nativeObj);
 
     // C++:  void cv::xphoto::SimpleWB::setOutputMin(float val)
     private static native void setOutputMin_0(long nativeObj, float val);
+
+    // C++:  float cv::xphoto::SimpleWB::getOutputMax()
+    private static native float getOutputMax_0(long nativeObj);
+
+    // C++:  void cv::xphoto::SimpleWB::setOutputMax(float val)
+    private static native void setOutputMax_0(long nativeObj, float val);
+
+    // C++:  float cv::xphoto::SimpleWB::getP()
+    private static native float getP_0(long nativeObj);
 
     // C++:  void cv::xphoto::SimpleWB::setP(float val)
     private static native void setP_0(long nativeObj, float val);

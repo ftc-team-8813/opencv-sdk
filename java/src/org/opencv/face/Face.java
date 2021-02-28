@@ -25,20 +25,20 @@ public class Face {
 
 
     //
-    // C++:  Ptr_Facemark cv::face::createFacemarkKazemi()
-    //
-
-    public static Facemark createFacemarkKazemi() {
-        return Facemark.__fromPtr__(createFacemarkKazemi_0());
-    }
-
-
-    //
     // C++:  Ptr_Facemark cv::face::createFacemarkLBF()
     //
 
     public static Facemark createFacemarkLBF() {
         return Facemark.__fromPtr__(createFacemarkLBF_0());
+    }
+
+
+    //
+    // C++:  Ptr_Facemark cv::face::createFacemarkKazemi()
+    //
+
+    public static Facemark createFacemarkKazemi() {
+        return Facemark.__fromPtr__(createFacemarkKazemi_0());
     }
 
 
@@ -97,72 +97,6 @@ public class Face {
      */
     public static boolean loadDatasetList(String imageList, String annotationList, List<String> images, List<String> annotations) {
         return loadDatasetList_0(imageList, annotationList, images, annotations);
-    }
-
-
-    //
-    // C++:  bool cv::face::loadFacePoints(String filename, Mat& points, float offset = 0.0f)
-    //
-
-    /**
-     * A utility to load facial landmark information from a given file.
-     *
-     * @param filename The filename of file contains the facial landmarks data.
-     * @param points The loaded facial landmark points.
-     * @param offset An offset value to adjust the loaded points.
-     *
-     * &lt;B&gt;Example of usage&lt;/B&gt;
-     * <code>
-     * std::vector&lt;Point2f&gt; points;
-     * face::loadFacePoints("filename.txt", points, 0.0f);
-     * </code>
-     *
-     * The annotation file should follow the default format which is
-     * <code>
-     * version: 1
-     * n_points:  68
-     * {
-     * 212.716603 499.771793
-     * 230.232816 566.290071
-     * ...
-     * }
-     * </code>
-     * where n_points is the number of points considered
-     * and each point is represented as its position in x and y.
-     * @return automatically generated
-     */
-    public static boolean loadFacePoints(String filename, Mat points, float offset) {
-        return loadFacePoints_0(filename, points.nativeObj, offset);
-    }
-
-    /**
-     * A utility to load facial landmark information from a given file.
-     *
-     * @param filename The filename of file contains the facial landmarks data.
-     * @param points The loaded facial landmark points.
-     *
-     * &lt;B&gt;Example of usage&lt;/B&gt;
-     * <code>
-     * std::vector&lt;Point2f&gt; points;
-     * face::loadFacePoints("filename.txt", points, 0.0f);
-     * </code>
-     *
-     * The annotation file should follow the default format which is
-     * <code>
-     * version: 1
-     * n_points:  68
-     * {
-     * 212.716603 499.771793
-     * 230.232816 566.290071
-     * ...
-     * }
-     * </code>
-     * where n_points is the number of points considered
-     * and each point is represented as its position in x and y.
-     * @return automatically generated
-     */
-    public static boolean loadFacePoints(String filename, Mat points) {
-        return loadFacePoints_1(filename, points.nativeObj);
     }
 
 
@@ -378,6 +312,72 @@ public class Face {
 
 
     //
+    // C++:  bool cv::face::loadFacePoints(String filename, Mat& points, float offset = 0.0f)
+    //
+
+    /**
+     * A utility to load facial landmark information from a given file.
+     *
+     * @param filename The filename of file contains the facial landmarks data.
+     * @param points The loaded facial landmark points.
+     * @param offset An offset value to adjust the loaded points.
+     *
+     * &lt;B&gt;Example of usage&lt;/B&gt;
+     * <code>
+     * std::vector&lt;Point2f&gt; points;
+     * face::loadFacePoints("filename.txt", points, 0.0f);
+     * </code>
+     *
+     * The annotation file should follow the default format which is
+     * <code>
+     * version: 1
+     * n_points:  68
+     * {
+     * 212.716603 499.771793
+     * 230.232816 566.290071
+     * ...
+     * }
+     * </code>
+     * where n_points is the number of points considered
+     * and each point is represented as its position in x and y.
+     * @return automatically generated
+     */
+    public static boolean loadFacePoints(String filename, Mat points, float offset) {
+        return loadFacePoints_0(filename, points.nativeObj, offset);
+    }
+
+    /**
+     * A utility to load facial landmark information from a given file.
+     *
+     * @param filename The filename of file contains the facial landmarks data.
+     * @param points The loaded facial landmark points.
+     *
+     * &lt;B&gt;Example of usage&lt;/B&gt;
+     * <code>
+     * std::vector&lt;Point2f&gt; points;
+     * face::loadFacePoints("filename.txt", points, 0.0f);
+     * </code>
+     *
+     * The annotation file should follow the default format which is
+     * <code>
+     * version: 1
+     * n_points:  68
+     * {
+     * 212.716603 499.771793
+     * 230.232816 566.290071
+     * ...
+     * }
+     * </code>
+     * where n_points is the number of points considered
+     * and each point is represented as its position in x and y.
+     * @return automatically generated
+     */
+    public static boolean loadFacePoints(String filename, Mat points) {
+        return loadFacePoints_1(filename, points.nativeObj);
+    }
+
+
+    //
     // C++:  void cv::face::drawFacemarks(Mat& image, Mat points, Scalar color = Scalar(255,0,0))
     //
 
@@ -430,21 +430,17 @@ public class Face {
     // C++:  Ptr_Facemark cv::face::createFacemarkAAM()
     private static native long createFacemarkAAM_0();
 
-    // C++:  Ptr_Facemark cv::face::createFacemarkKazemi()
-    private static native long createFacemarkKazemi_0();
-
     // C++:  Ptr_Facemark cv::face::createFacemarkLBF()
     private static native long createFacemarkLBF_0();
+
+    // C++:  Ptr_Facemark cv::face::createFacemarkKazemi()
+    private static native long createFacemarkKazemi_0();
 
     // C++:  bool cv::face::getFacesHAAR(Mat image, Mat& faces, String face_cascade_name)
     private static native boolean getFacesHAAR_0(long image_nativeObj, long faces_nativeObj, String face_cascade_name);
 
     // C++:  bool cv::face::loadDatasetList(String imageList, String annotationList, vector_String images, vector_String annotations)
     private static native boolean loadDatasetList_0(String imageList, String annotationList, List<String> images, List<String> annotations);
-
-    // C++:  bool cv::face::loadFacePoints(String filename, Mat& points, float offset = 0.0f)
-    private static native boolean loadFacePoints_0(String filename, long points_nativeObj, float offset);
-    private static native boolean loadFacePoints_1(String filename, long points_nativeObj);
 
     // C++:  bool cv::face::loadTrainingData(String filename, vector_String images, Mat& facePoints, char delim = ' ', float offset = 0.0f)
     private static native boolean loadTrainingData_0(String filename, List<String> images, long facePoints_nativeObj, char delim, float offset);
@@ -457,6 +453,10 @@ public class Face {
 
     // C++:  bool cv::face::loadTrainingData(vector_String filename, vector_vector_Point2f trainlandmarks, vector_String trainimages)
     private static native boolean loadTrainingData_5(List<String> filename, long trainlandmarks_mat_nativeObj, List<String> trainimages);
+
+    // C++:  bool cv::face::loadFacePoints(String filename, Mat& points, float offset = 0.0f)
+    private static native boolean loadFacePoints_0(String filename, long points_nativeObj, float offset);
+    private static native boolean loadFacePoints_1(String filename, long points_nativeObj);
 
     // C++:  void cv::face::drawFacemarks(Mat& image, Mat points, Scalar color = Scalar(255,0,0))
     private static native void drawFacemarks_0(long image_nativeObj, long points_nativeObj, double color_val0, double color_val1, double color_val2, double color_val3);

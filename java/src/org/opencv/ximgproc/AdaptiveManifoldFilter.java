@@ -49,24 +49,6 @@ public class AdaptiveManifoldFilter extends Algorithm {
     public static AdaptiveManifoldFilter __fromPtr__(long addr) { return new AdaptiveManifoldFilter(addr); }
 
     //
-    // C++: static Ptr_AdaptiveManifoldFilter cv::ximgproc::AdaptiveManifoldFilter::create()
-    //
-
-    public static AdaptiveManifoldFilter create() {
-        return AdaptiveManifoldFilter.__fromPtr__(create_0());
-    }
-
-
-    //
-    // C++:  void cv::ximgproc::AdaptiveManifoldFilter::collectGarbage()
-    //
-
-    public void collectGarbage() {
-        collectGarbage_0(nativeObj);
-    }
-
-
-    //
     // C++:  void cv::ximgproc::AdaptiveManifoldFilter::filter(Mat src, Mat& dst, Mat joint = Mat())
     //
 
@@ -96,6 +78,24 @@ public class AdaptiveManifoldFilter extends Algorithm {
     }
 
 
+    //
+    // C++:  void cv::ximgproc::AdaptiveManifoldFilter::collectGarbage()
+    //
+
+    public void collectGarbage() {
+        collectGarbage_0(nativeObj);
+    }
+
+
+    //
+    // C++: static Ptr_AdaptiveManifoldFilter cv::ximgproc::AdaptiveManifoldFilter::create()
+    //
+
+    public static AdaptiveManifoldFilter create() {
+        return AdaptiveManifoldFilter.__fromPtr__(create_0());
+    }
+
+
     @Override
     protected void finalize() throws Throwable {
         delete(nativeObj);
@@ -103,15 +103,15 @@ public class AdaptiveManifoldFilter extends Algorithm {
 
 
 
-    // C++: static Ptr_AdaptiveManifoldFilter cv::ximgproc::AdaptiveManifoldFilter::create()
-    private static native long create_0();
+    // C++:  void cv::ximgproc::AdaptiveManifoldFilter::filter(Mat src, Mat& dst, Mat joint = Mat())
+    private static native void filter_0(long nativeObj, long src_nativeObj, long dst_nativeObj, long joint_nativeObj);
+    private static native void filter_1(long nativeObj, long src_nativeObj, long dst_nativeObj);
 
     // C++:  void cv::ximgproc::AdaptiveManifoldFilter::collectGarbage()
     private static native void collectGarbage_0(long nativeObj);
 
-    // C++:  void cv::ximgproc::AdaptiveManifoldFilter::filter(Mat src, Mat& dst, Mat joint = Mat())
-    private static native void filter_0(long nativeObj, long src_nativeObj, long dst_nativeObj, long joint_nativeObj);
-    private static native void filter_1(long nativeObj, long src_nativeObj, long dst_nativeObj);
+    // C++: static Ptr_AdaptiveManifoldFilter cv::ximgproc::AdaptiveManifoldFilter::create()
+    private static native long create_0();
 
     // native support for java finalize()
     private static native void delete(long nativeObj);

@@ -8,6 +8,7 @@ import java.util.List;
 import org.opencv.core.Mat;
 import org.opencv.core.Size;
 import org.opencv.structured_light.SinusoidalPattern;
+import org.opencv.structured_light.SinusoidalPattern_Params;
 import org.opencv.structured_light.StructuredLightPattern;
 import org.opencv.utils.Converters;
 
@@ -31,27 +32,21 @@ public class SinusoidalPattern extends StructuredLightPattern {
 
     /**
      * Constructor.
+     * @param parameters SinusoidalPattern parameters SinusoidalPattern::Params: width, height of the projector and patterns parameters.
+     *
+     * @return automatically generated
+     */
+    public static SinusoidalPattern create(SinusoidalPattern_Params parameters) {
+        return SinusoidalPattern.__fromPtr__(create_0(parameters.getNativeObjAddr()));
+    }
+
+    /**
+     * Constructor.
      *
      * @return automatically generated
      */
     public static SinusoidalPattern create() {
-        return SinusoidalPattern.__fromPtr__(create_0());
-    }
-
-
-    //
-    // C++:  void cv::structured_light::SinusoidalPattern::computeDataModulationTerm(vector_Mat patternImages, Mat& dataModulationTerm, Mat shadowMask)
-    //
-
-    /**
-     * compute the data modulation term.
-     * @param patternImages captured images with projected patterns.
-     * @param dataModulationTerm Mat where the data modulation term is saved.
-     * @param shadowMask Mask used to discard shadow regions.
-     */
-    public void computeDataModulationTerm(List<Mat> patternImages, Mat dataModulationTerm, Mat shadowMask) {
-        Mat patternImages_mat = Converters.vector_Mat_to_Mat(patternImages);
-        computeDataModulationTerm_0(nativeObj, patternImages_mat.nativeObj, dataModulationTerm.nativeObj, shadowMask.nativeObj);
+        return SinusoidalPattern.__fromPtr__(create_1());
     }
 
 
@@ -94,24 +89,6 @@ public class SinusoidalPattern extends StructuredLightPattern {
 
 
     //
-    // C++:  void cv::structured_light::SinusoidalPattern::findProCamMatches(Mat projUnwrappedPhaseMap, Mat camUnwrappedPhaseMap, vector_Mat& matches)
-    //
-
-    /**
-     * Find correspondences between the two devices thanks to unwrapped phase maps.
-     * @param projUnwrappedPhaseMap Projector's unwrapped phase map.
-     * @param camUnwrappedPhaseMap Camera's unwrapped phase map.
-     * @param matches Images used to display correspondences map.
-     */
-    public void findProCamMatches(Mat projUnwrappedPhaseMap, Mat camUnwrappedPhaseMap, List<Mat> matches) {
-        Mat matches_mat = new Mat();
-        findProCamMatches_0(nativeObj, projUnwrappedPhaseMap.nativeObj, camUnwrappedPhaseMap.nativeObj, matches_mat.nativeObj);
-        Converters.Mat_to_vector_Mat(matches_mat, matches);
-        matches_mat.release();
-    }
-
-
-    //
     // C++:  void cv::structured_light::SinusoidalPattern::unwrapPhaseMap(Mat wrappedPhaseMap, Mat& unwrappedPhaseMap, Size camSize, Mat shadowMask = Mat())
     //
 
@@ -137,6 +114,40 @@ public class SinusoidalPattern extends StructuredLightPattern {
     }
 
 
+    //
+    // C++:  void cv::structured_light::SinusoidalPattern::findProCamMatches(Mat projUnwrappedPhaseMap, Mat camUnwrappedPhaseMap, vector_Mat& matches)
+    //
+
+    /**
+     * Find correspondences between the two devices thanks to unwrapped phase maps.
+     * @param projUnwrappedPhaseMap Projector's unwrapped phase map.
+     * @param camUnwrappedPhaseMap Camera's unwrapped phase map.
+     * @param matches Images used to display correspondences map.
+     */
+    public void findProCamMatches(Mat projUnwrappedPhaseMap, Mat camUnwrappedPhaseMap, List<Mat> matches) {
+        Mat matches_mat = new Mat();
+        findProCamMatches_0(nativeObj, projUnwrappedPhaseMap.nativeObj, camUnwrappedPhaseMap.nativeObj, matches_mat.nativeObj);
+        Converters.Mat_to_vector_Mat(matches_mat, matches);
+        matches_mat.release();
+    }
+
+
+    //
+    // C++:  void cv::structured_light::SinusoidalPattern::computeDataModulationTerm(vector_Mat patternImages, Mat& dataModulationTerm, Mat shadowMask)
+    //
+
+    /**
+     * compute the data modulation term.
+     * @param patternImages captured images with projected patterns.
+     * @param dataModulationTerm Mat where the data modulation term is saved.
+     * @param shadowMask Mask used to discard shadow regions.
+     */
+    public void computeDataModulationTerm(List<Mat> patternImages, Mat dataModulationTerm, Mat shadowMask) {
+        Mat patternImages_mat = Converters.vector_Mat_to_Mat(patternImages);
+        computeDataModulationTerm_0(nativeObj, patternImages_mat.nativeObj, dataModulationTerm.nativeObj, shadowMask.nativeObj);
+    }
+
+
     @Override
     protected void finalize() throws Throwable {
         delete(nativeObj);
@@ -145,22 +156,23 @@ public class SinusoidalPattern extends StructuredLightPattern {
 
 
     // C++: static Ptr_SinusoidalPattern cv::structured_light::SinusoidalPattern::create(Ptr_SinusoidalPattern_Params parameters = makePtr<SinusoidalPattern::Params>())
-    private static native long create_0();
-
-    // C++:  void cv::structured_light::SinusoidalPattern::computeDataModulationTerm(vector_Mat patternImages, Mat& dataModulationTerm, Mat shadowMask)
-    private static native void computeDataModulationTerm_0(long nativeObj, long patternImages_mat_nativeObj, long dataModulationTerm_nativeObj, long shadowMask_nativeObj);
+    private static native long create_0(long parameters_nativeObj);
+    private static native long create_1();
 
     // C++:  void cv::structured_light::SinusoidalPattern::computePhaseMap(vector_Mat patternImages, Mat& wrappedPhaseMap, Mat& shadowMask = Mat(), Mat fundamental = Mat())
     private static native void computePhaseMap_0(long nativeObj, long patternImages_mat_nativeObj, long wrappedPhaseMap_nativeObj, long shadowMask_nativeObj, long fundamental_nativeObj);
     private static native void computePhaseMap_1(long nativeObj, long patternImages_mat_nativeObj, long wrappedPhaseMap_nativeObj, long shadowMask_nativeObj);
     private static native void computePhaseMap_2(long nativeObj, long patternImages_mat_nativeObj, long wrappedPhaseMap_nativeObj);
 
-    // C++:  void cv::structured_light::SinusoidalPattern::findProCamMatches(Mat projUnwrappedPhaseMap, Mat camUnwrappedPhaseMap, vector_Mat& matches)
-    private static native void findProCamMatches_0(long nativeObj, long projUnwrappedPhaseMap_nativeObj, long camUnwrappedPhaseMap_nativeObj, long matches_mat_nativeObj);
-
     // C++:  void cv::structured_light::SinusoidalPattern::unwrapPhaseMap(Mat wrappedPhaseMap, Mat& unwrappedPhaseMap, Size camSize, Mat shadowMask = Mat())
     private static native void unwrapPhaseMap_0(long nativeObj, long wrappedPhaseMap_nativeObj, long unwrappedPhaseMap_nativeObj, double camSize_width, double camSize_height, long shadowMask_nativeObj);
     private static native void unwrapPhaseMap_1(long nativeObj, long wrappedPhaseMap_nativeObj, long unwrappedPhaseMap_nativeObj, double camSize_width, double camSize_height);
+
+    // C++:  void cv::structured_light::SinusoidalPattern::findProCamMatches(Mat projUnwrappedPhaseMap, Mat camUnwrappedPhaseMap, vector_Mat& matches)
+    private static native void findProCamMatches_0(long nativeObj, long projUnwrappedPhaseMap_nativeObj, long camUnwrappedPhaseMap_nativeObj, long matches_mat_nativeObj);
+
+    // C++:  void cv::structured_light::SinusoidalPattern::computeDataModulationTerm(vector_Mat patternImages, Mat& dataModulationTerm, Mat shadowMask)
+    private static native void computeDataModulationTerm_0(long nativeObj, long patternImages_mat_nativeObj, long dataModulationTerm_nativeObj, long shadowMask_nativeObj);
 
     // native support for java finalize()
     private static native void delete(long nativeObj);

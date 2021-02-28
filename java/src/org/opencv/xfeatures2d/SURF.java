@@ -149,20 +149,11 @@ public class SURF extends Feature2D {
 
 
     //
-    // C++:  bool cv::xfeatures2d::SURF::getExtended()
+    // C++:  void cv::xfeatures2d::SURF::setHessianThreshold(double hessianThreshold)
     //
 
-    public boolean getExtended() {
-        return getExtended_0(nativeObj);
-    }
-
-
-    //
-    // C++:  bool cv::xfeatures2d::SURF::getUpright()
-    //
-
-    public boolean getUpright() {
-        return getUpright_0(nativeObj);
+    public void setHessianThreshold(double hessianThreshold) {
+        setHessianThreshold_0(nativeObj, hessianThreshold);
     }
 
 
@@ -176,11 +167,11 @@ public class SURF extends Feature2D {
 
 
     //
-    // C++:  int cv::xfeatures2d::SURF::getNOctaveLayers()
+    // C++:  void cv::xfeatures2d::SURF::setNOctaves(int nOctaves)
     //
 
-    public int getNOctaveLayers() {
-        return getNOctaveLayers_0(nativeObj);
+    public void setNOctaves(int nOctaves) {
+        setNOctaves_0(nativeObj, nOctaves);
     }
 
 
@@ -194,24 +185,6 @@ public class SURF extends Feature2D {
 
 
     //
-    // C++:  void cv::xfeatures2d::SURF::setExtended(bool extended)
-    //
-
-    public void setExtended(boolean extended) {
-        setExtended_0(nativeObj, extended);
-    }
-
-
-    //
-    // C++:  void cv::xfeatures2d::SURF::setHessianThreshold(double hessianThreshold)
-    //
-
-    public void setHessianThreshold(double hessianThreshold) {
-        setHessianThreshold_0(nativeObj, hessianThreshold);
-    }
-
-
-    //
     // C++:  void cv::xfeatures2d::SURF::setNOctaveLayers(int nOctaveLayers)
     //
 
@@ -221,11 +194,29 @@ public class SURF extends Feature2D {
 
 
     //
-    // C++:  void cv::xfeatures2d::SURF::setNOctaves(int nOctaves)
+    // C++:  int cv::xfeatures2d::SURF::getNOctaveLayers()
     //
 
-    public void setNOctaves(int nOctaves) {
-        setNOctaves_0(nativeObj, nOctaves);
+    public int getNOctaveLayers() {
+        return getNOctaveLayers_0(nativeObj);
+    }
+
+
+    //
+    // C++:  void cv::xfeatures2d::SURF::setExtended(bool extended)
+    //
+
+    public void setExtended(boolean extended) {
+        setExtended_0(nativeObj, extended);
+    }
+
+
+    //
+    // C++:  bool cv::xfeatures2d::SURF::getExtended()
+    //
+
+    public boolean getExtended() {
+        return getExtended_0(nativeObj);
     }
 
 
@@ -235,6 +226,15 @@ public class SURF extends Feature2D {
 
     public void setUpright(boolean upright) {
         setUpright_0(nativeObj, upright);
+    }
+
+
+    //
+    // C++:  bool cv::xfeatures2d::SURF::getUpright()
+    //
+
+    public boolean getUpright() {
+        return getUpright_0(nativeObj);
     }
 
 
@@ -253,35 +253,35 @@ public class SURF extends Feature2D {
     private static native long create_4(double hessianThreshold);
     private static native long create_5();
 
-    // C++:  bool cv::xfeatures2d::SURF::getExtended()
-    private static native boolean getExtended_0(long nativeObj);
-
-    // C++:  bool cv::xfeatures2d::SURF::getUpright()
-    private static native boolean getUpright_0(long nativeObj);
+    // C++:  void cv::xfeatures2d::SURF::setHessianThreshold(double hessianThreshold)
+    private static native void setHessianThreshold_0(long nativeObj, double hessianThreshold);
 
     // C++:  double cv::xfeatures2d::SURF::getHessianThreshold()
     private static native double getHessianThreshold_0(long nativeObj);
 
-    // C++:  int cv::xfeatures2d::SURF::getNOctaveLayers()
-    private static native int getNOctaveLayers_0(long nativeObj);
+    // C++:  void cv::xfeatures2d::SURF::setNOctaves(int nOctaves)
+    private static native void setNOctaves_0(long nativeObj, int nOctaves);
 
     // C++:  int cv::xfeatures2d::SURF::getNOctaves()
     private static native int getNOctaves_0(long nativeObj);
 
-    // C++:  void cv::xfeatures2d::SURF::setExtended(bool extended)
-    private static native void setExtended_0(long nativeObj, boolean extended);
-
-    // C++:  void cv::xfeatures2d::SURF::setHessianThreshold(double hessianThreshold)
-    private static native void setHessianThreshold_0(long nativeObj, double hessianThreshold);
-
     // C++:  void cv::xfeatures2d::SURF::setNOctaveLayers(int nOctaveLayers)
     private static native void setNOctaveLayers_0(long nativeObj, int nOctaveLayers);
 
-    // C++:  void cv::xfeatures2d::SURF::setNOctaves(int nOctaves)
-    private static native void setNOctaves_0(long nativeObj, int nOctaves);
+    // C++:  int cv::xfeatures2d::SURF::getNOctaveLayers()
+    private static native int getNOctaveLayers_0(long nativeObj);
+
+    // C++:  void cv::xfeatures2d::SURF::setExtended(bool extended)
+    private static native void setExtended_0(long nativeObj, boolean extended);
+
+    // C++:  bool cv::xfeatures2d::SURF::getExtended()
+    private static native boolean getExtended_0(long nativeObj);
 
     // C++:  void cv::xfeatures2d::SURF::setUpright(bool upright)
     private static native void setUpright_0(long nativeObj, boolean upright);
+
+    // C++:  bool cv::xfeatures2d::SURF::getUpright()
+    private static native boolean getUpright_0(long nativeObj);
 
     // native support for java finalize()
     private static native void delete(long nativeObj);

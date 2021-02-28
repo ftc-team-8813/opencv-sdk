@@ -20,6 +20,148 @@ public class LBPHFaceRecognizer extends FaceRecognizer {
     public static LBPHFaceRecognizer __fromPtr__(long addr) { return new LBPHFaceRecognizer(addr); }
 
     //
+    // C++:  int cv::face::LBPHFaceRecognizer::getGridX()
+    //
+
+    /**
+     * SEE: setGridX
+     * @return automatically generated
+     */
+    public int getGridX() {
+        return getGridX_0(nativeObj);
+    }
+
+
+    //
+    // C++:  void cv::face::LBPHFaceRecognizer::setGridX(int val)
+    //
+
+    /**
+     *  getGridX SEE: getGridX
+     * @param val automatically generated
+     */
+    public void setGridX(int val) {
+        setGridX_0(nativeObj, val);
+    }
+
+
+    //
+    // C++:  int cv::face::LBPHFaceRecognizer::getGridY()
+    //
+
+    /**
+     * SEE: setGridY
+     * @return automatically generated
+     */
+    public int getGridY() {
+        return getGridY_0(nativeObj);
+    }
+
+
+    //
+    // C++:  void cv::face::LBPHFaceRecognizer::setGridY(int val)
+    //
+
+    /**
+     *  getGridY SEE: getGridY
+     * @param val automatically generated
+     */
+    public void setGridY(int val) {
+        setGridY_0(nativeObj, val);
+    }
+
+
+    //
+    // C++:  int cv::face::LBPHFaceRecognizer::getRadius()
+    //
+
+    /**
+     * SEE: setRadius
+     * @return automatically generated
+     */
+    public int getRadius() {
+        return getRadius_0(nativeObj);
+    }
+
+
+    //
+    // C++:  void cv::face::LBPHFaceRecognizer::setRadius(int val)
+    //
+
+    /**
+     *  getRadius SEE: getRadius
+     * @param val automatically generated
+     */
+    public void setRadius(int val) {
+        setRadius_0(nativeObj, val);
+    }
+
+
+    //
+    // C++:  int cv::face::LBPHFaceRecognizer::getNeighbors()
+    //
+
+    /**
+     * SEE: setNeighbors
+     * @return automatically generated
+     */
+    public int getNeighbors() {
+        return getNeighbors_0(nativeObj);
+    }
+
+
+    //
+    // C++:  void cv::face::LBPHFaceRecognizer::setNeighbors(int val)
+    //
+
+    /**
+     *  getNeighbors SEE: getNeighbors
+     * @param val automatically generated
+     */
+    public void setNeighbors(int val) {
+        setNeighbors_0(nativeObj, val);
+    }
+
+
+    //
+    // C++:  double cv::face::LBPHFaceRecognizer::getThreshold()
+    //
+
+    /**
+     * SEE: setThreshold
+     * @return automatically generated
+     */
+    public double getThreshold() {
+        return getThreshold_0(nativeObj);
+    }
+
+
+    //
+    // C++:  void cv::face::LBPHFaceRecognizer::setThreshold(double val)
+    //
+
+    /**
+     *  getThreshold SEE: getThreshold
+     * @param val automatically generated
+     */
+    public void setThreshold(double val) {
+        setThreshold_0(nativeObj, val);
+    }
+
+
+    //
+    // C++:  vector_Mat cv::face::LBPHFaceRecognizer::getHistograms()
+    //
+
+    public List<Mat> getHistograms() {
+        List<Mat> retVal = new ArrayList<Mat>();
+        Mat retValMat = new Mat(getHistograms_0(nativeObj));
+        Converters.Mat_to_vector_Mat(retValMat, retVal);
+        return retVal;
+    }
+
+
+    //
     // C++:  Mat cv::face::LBPHFaceRecognizer::getLabels()
     //
 
@@ -372,154 +514,45 @@ public class LBPHFaceRecognizer extends FaceRecognizer {
     }
 
 
-    //
-    // C++:  double cv::face::LBPHFaceRecognizer::getThreshold()
-    //
-
-    /**
-     * SEE: setThreshold
-     * @return automatically generated
-     */
-    public double getThreshold() {
-        return getThreshold_0(nativeObj);
-    }
-
-
-    //
-    // C++:  int cv::face::LBPHFaceRecognizer::getGridX()
-    //
-
-    /**
-     * SEE: setGridX
-     * @return automatically generated
-     */
-    public int getGridX() {
-        return getGridX_0(nativeObj);
-    }
-
-
-    //
-    // C++:  int cv::face::LBPHFaceRecognizer::getGridY()
-    //
-
-    /**
-     * SEE: setGridY
-     * @return automatically generated
-     */
-    public int getGridY() {
-        return getGridY_0(nativeObj);
-    }
-
-
-    //
-    // C++:  int cv::face::LBPHFaceRecognizer::getNeighbors()
-    //
-
-    /**
-     * SEE: setNeighbors
-     * @return automatically generated
-     */
-    public int getNeighbors() {
-        return getNeighbors_0(nativeObj);
-    }
-
-
-    //
-    // C++:  int cv::face::LBPHFaceRecognizer::getRadius()
-    //
-
-    /**
-     * SEE: setRadius
-     * @return automatically generated
-     */
-    public int getRadius() {
-        return getRadius_0(nativeObj);
-    }
-
-
-    //
-    // C++:  vector_Mat cv::face::LBPHFaceRecognizer::getHistograms()
-    //
-
-    public List<Mat> getHistograms() {
-        List<Mat> retVal = new ArrayList<Mat>();
-        Mat retValMat = new Mat(getHistograms_0(nativeObj));
-        Converters.Mat_to_vector_Mat(retValMat, retVal);
-        return retVal;
-    }
-
-
-    //
-    // C++:  void cv::face::LBPHFaceRecognizer::setGridX(int val)
-    //
-
-    /**
-     *  getGridX SEE: getGridX
-     * @param val automatically generated
-     */
-    public void setGridX(int val) {
-        setGridX_0(nativeObj, val);
-    }
-
-
-    //
-    // C++:  void cv::face::LBPHFaceRecognizer::setGridY(int val)
-    //
-
-    /**
-     *  getGridY SEE: getGridY
-     * @param val automatically generated
-     */
-    public void setGridY(int val) {
-        setGridY_0(nativeObj, val);
-    }
-
-
-    //
-    // C++:  void cv::face::LBPHFaceRecognizer::setNeighbors(int val)
-    //
-
-    /**
-     *  getNeighbors SEE: getNeighbors
-     * @param val automatically generated
-     */
-    public void setNeighbors(int val) {
-        setNeighbors_0(nativeObj, val);
-    }
-
-
-    //
-    // C++:  void cv::face::LBPHFaceRecognizer::setRadius(int val)
-    //
-
-    /**
-     *  getRadius SEE: getRadius
-     * @param val automatically generated
-     */
-    public void setRadius(int val) {
-        setRadius_0(nativeObj, val);
-    }
-
-
-    //
-    // C++:  void cv::face::LBPHFaceRecognizer::setThreshold(double val)
-    //
-
-    /**
-     *  getThreshold SEE: getThreshold
-     * @param val automatically generated
-     */
-    public void setThreshold(double val) {
-        setThreshold_0(nativeObj, val);
-    }
-
-
     @Override
     protected void finalize() throws Throwable {
         delete(nativeObj);
     }
 
 
+
+    // C++:  int cv::face::LBPHFaceRecognizer::getGridX()
+    private static native int getGridX_0(long nativeObj);
+
+    // C++:  void cv::face::LBPHFaceRecognizer::setGridX(int val)
+    private static native void setGridX_0(long nativeObj, int val);
+
+    // C++:  int cv::face::LBPHFaceRecognizer::getGridY()
+    private static native int getGridY_0(long nativeObj);
+
+    // C++:  void cv::face::LBPHFaceRecognizer::setGridY(int val)
+    private static native void setGridY_0(long nativeObj, int val);
+
+    // C++:  int cv::face::LBPHFaceRecognizer::getRadius()
+    private static native int getRadius_0(long nativeObj);
+
+    // C++:  void cv::face::LBPHFaceRecognizer::setRadius(int val)
+    private static native void setRadius_0(long nativeObj, int val);
+
+    // C++:  int cv::face::LBPHFaceRecognizer::getNeighbors()
+    private static native int getNeighbors_0(long nativeObj);
+
+    // C++:  void cv::face::LBPHFaceRecognizer::setNeighbors(int val)
+    private static native void setNeighbors_0(long nativeObj, int val);
+
+    // C++:  double cv::face::LBPHFaceRecognizer::getThreshold()
+    private static native double getThreshold_0(long nativeObj);
+
+    // C++:  void cv::face::LBPHFaceRecognizer::setThreshold(double val)
+    private static native void setThreshold_0(long nativeObj, double val);
+
+    // C++:  vector_Mat cv::face::LBPHFaceRecognizer::getHistograms()
+    private static native long getHistograms_0(long nativeObj);
 
     // C++:  Mat cv::face::LBPHFaceRecognizer::getLabels()
     private static native long getLabels_0(long nativeObj);
@@ -531,39 +564,6 @@ public class LBPHFaceRecognizer extends FaceRecognizer {
     private static native long create_3(int radius, int neighbors);
     private static native long create_4(int radius);
     private static native long create_5();
-
-    // C++:  double cv::face::LBPHFaceRecognizer::getThreshold()
-    private static native double getThreshold_0(long nativeObj);
-
-    // C++:  int cv::face::LBPHFaceRecognizer::getGridX()
-    private static native int getGridX_0(long nativeObj);
-
-    // C++:  int cv::face::LBPHFaceRecognizer::getGridY()
-    private static native int getGridY_0(long nativeObj);
-
-    // C++:  int cv::face::LBPHFaceRecognizer::getNeighbors()
-    private static native int getNeighbors_0(long nativeObj);
-
-    // C++:  int cv::face::LBPHFaceRecognizer::getRadius()
-    private static native int getRadius_0(long nativeObj);
-
-    // C++:  vector_Mat cv::face::LBPHFaceRecognizer::getHistograms()
-    private static native long getHistograms_0(long nativeObj);
-
-    // C++:  void cv::face::LBPHFaceRecognizer::setGridX(int val)
-    private static native void setGridX_0(long nativeObj, int val);
-
-    // C++:  void cv::face::LBPHFaceRecognizer::setGridY(int val)
-    private static native void setGridY_0(long nativeObj, int val);
-
-    // C++:  void cv::face::LBPHFaceRecognizer::setNeighbors(int val)
-    private static native void setNeighbors_0(long nativeObj, int val);
-
-    // C++:  void cv::face::LBPHFaceRecognizer::setRadius(int val)
-    private static native void setRadius_0(long nativeObj, int val);
-
-    // C++:  void cv::face::LBPHFaceRecognizer::setThreshold(double val)
-    private static native void setThreshold_0(long nativeObj, double val);
 
     // native support for java finalize()
     private static native void delete(long nativeObj);

@@ -19,6 +19,32 @@ public class SelectiveSearchSegmentationStrategy extends Algorithm {
     public static SelectiveSearchSegmentationStrategy __fromPtr__(long addr) { return new SelectiveSearchSegmentationStrategy(addr); }
 
     //
+    // C++:  void cv::ximgproc::segmentation::SelectiveSearchSegmentationStrategy::setImage(Mat img, Mat regions, Mat sizes, int image_id = -1)
+    //
+
+    /**
+     * Set a initial image, with a segmentation.
+     *                                 @param img The input image. Any number of channel can be provided
+     *                                 @param regions A segmentation of the image. The parameter must be the same size of img.
+     *                                 @param sizes The sizes of different regions
+     *                                 @param image_id If not set to -1, try to cache pre-computations. If the same set og (img, regions, size) is used, the image_id need to be the same.
+     */
+    public void setImage(Mat img, Mat regions, Mat sizes, int image_id) {
+        setImage_0(nativeObj, img.nativeObj, regions.nativeObj, sizes.nativeObj, image_id);
+    }
+
+    /**
+     * Set a initial image, with a segmentation.
+     *                                 @param img The input image. Any number of channel can be provided
+     *                                 @param regions A segmentation of the image. The parameter must be the same size of img.
+     *                                 @param sizes The sizes of different regions
+     */
+    public void setImage(Mat img, Mat regions, Mat sizes) {
+        setImage_1(nativeObj, img.nativeObj, regions.nativeObj, sizes.nativeObj);
+    }
+
+
+    //
     // C++:  float cv::ximgproc::segmentation::SelectiveSearchSegmentationStrategy::get(int r1, int r2)
     //
 
@@ -47,32 +73,6 @@ public class SelectiveSearchSegmentationStrategy extends Algorithm {
     }
 
 
-    //
-    // C++:  void cv::ximgproc::segmentation::SelectiveSearchSegmentationStrategy::setImage(Mat img, Mat regions, Mat sizes, int image_id = -1)
-    //
-
-    /**
-     * Set a initial image, with a segmentation.
-     *                                 @param img The input image. Any number of channel can be provided
-     *                                 @param regions A segmentation of the image. The parameter must be the same size of img.
-     *                                 @param sizes The sizes of different regions
-     *                                 @param image_id If not set to -1, try to cache pre-computations. If the same set og (img, regions, size) is used, the image_id need to be the same.
-     */
-    public void setImage(Mat img, Mat regions, Mat sizes, int image_id) {
-        setImage_0(nativeObj, img.nativeObj, regions.nativeObj, sizes.nativeObj, image_id);
-    }
-
-    /**
-     * Set a initial image, with a segmentation.
-     *                                 @param img The input image. Any number of channel can be provided
-     *                                 @param regions A segmentation of the image. The parameter must be the same size of img.
-     *                                 @param sizes The sizes of different regions
-     */
-    public void setImage(Mat img, Mat regions, Mat sizes) {
-        setImage_1(nativeObj, img.nativeObj, regions.nativeObj, sizes.nativeObj);
-    }
-
-
     @Override
     protected void finalize() throws Throwable {
         delete(nativeObj);
@@ -80,15 +80,15 @@ public class SelectiveSearchSegmentationStrategy extends Algorithm {
 
 
 
+    // C++:  void cv::ximgproc::segmentation::SelectiveSearchSegmentationStrategy::setImage(Mat img, Mat regions, Mat sizes, int image_id = -1)
+    private static native void setImage_0(long nativeObj, long img_nativeObj, long regions_nativeObj, long sizes_nativeObj, int image_id);
+    private static native void setImage_1(long nativeObj, long img_nativeObj, long regions_nativeObj, long sizes_nativeObj);
+
     // C++:  float cv::ximgproc::segmentation::SelectiveSearchSegmentationStrategy::get(int r1, int r2)
     private static native float get_0(long nativeObj, int r1, int r2);
 
     // C++:  void cv::ximgproc::segmentation::SelectiveSearchSegmentationStrategy::merge(int r1, int r2)
     private static native void merge_0(long nativeObj, int r1, int r2);
-
-    // C++:  void cv::ximgproc::segmentation::SelectiveSearchSegmentationStrategy::setImage(Mat img, Mat regions, Mat sizes, int image_id = -1)
-    private static native void setImage_0(long nativeObj, long img_nativeObj, long regions_nativeObj, long sizes_nativeObj, int image_id);
-    private static native void setImage_1(long nativeObj, long img_nativeObj, long regions_nativeObj, long sizes_nativeObj);
 
     // native support for java finalize()
     private static native void delete(long nativeObj);

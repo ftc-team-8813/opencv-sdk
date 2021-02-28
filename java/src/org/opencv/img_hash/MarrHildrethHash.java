@@ -20,35 +20,6 @@ public class MarrHildrethHash extends ImgHashBase {
     public static MarrHildrethHash __fromPtr__(long addr) { return new MarrHildrethHash(addr); }
 
     //
-    // C++: static Ptr_MarrHildrethHash cv::img_hash::MarrHildrethHash::create(float alpha = 2.0f, float scale = 1.0f)
-    //
-
-    /**
-     * @param alpha int scale factor for marr wavelet (default=2).
-     *         @param scale int level of scale factor (default = 1)
-     * @return automatically generated
-     */
-    public static MarrHildrethHash create(float alpha, float scale) {
-        return MarrHildrethHash.__fromPtr__(create_0(alpha, scale));
-    }
-
-    /**
-     * @param alpha int scale factor for marr wavelet (default=2).
-     * @return automatically generated
-     */
-    public static MarrHildrethHash create(float alpha) {
-        return MarrHildrethHash.__fromPtr__(create_1(alpha));
-    }
-
-    /**
-     * @return automatically generated
-     */
-    public static MarrHildrethHash create() {
-        return MarrHildrethHash.__fromPtr__(create_2());
-    }
-
-
-    //
     // C++:  float cv::img_hash::MarrHildrethHash::getAlpha()
     //
 
@@ -88,17 +59,41 @@ public class MarrHildrethHash extends ImgHashBase {
     }
 
 
+    //
+    // C++: static Ptr_MarrHildrethHash cv::img_hash::MarrHildrethHash::create(float alpha = 2.0f, float scale = 1.0f)
+    //
+
+    /**
+     * @param alpha int scale factor for marr wavelet (default=2).
+     *         @param scale int level of scale factor (default = 1)
+     * @return automatically generated
+     */
+    public static MarrHildrethHash create(float alpha, float scale) {
+        return MarrHildrethHash.__fromPtr__(create_0(alpha, scale));
+    }
+
+    /**
+     * @param alpha int scale factor for marr wavelet (default=2).
+     * @return automatically generated
+     */
+    public static MarrHildrethHash create(float alpha) {
+        return MarrHildrethHash.__fromPtr__(create_1(alpha));
+    }
+
+    /**
+     * @return automatically generated
+     */
+    public static MarrHildrethHash create() {
+        return MarrHildrethHash.__fromPtr__(create_2());
+    }
+
+
     @Override
     protected void finalize() throws Throwable {
         delete(nativeObj);
     }
 
 
-
-    // C++: static Ptr_MarrHildrethHash cv::img_hash::MarrHildrethHash::create(float alpha = 2.0f, float scale = 1.0f)
-    private static native long create_0(float alpha, float scale);
-    private static native long create_1(float alpha);
-    private static native long create_2();
 
     // C++:  float cv::img_hash::MarrHildrethHash::getAlpha()
     private static native float getAlpha_0(long nativeObj);
@@ -108,6 +103,11 @@ public class MarrHildrethHash extends ImgHashBase {
 
     // C++:  void cv::img_hash::MarrHildrethHash::setKernelParam(float alpha, float scale)
     private static native void setKernelParam_0(long nativeObj, float alpha, float scale);
+
+    // C++: static Ptr_MarrHildrethHash cv::img_hash::MarrHildrethHash::create(float alpha = 2.0f, float scale = 1.0f)
+    private static native long create_0(float alpha, float scale);
+    private static native long create_1(float alpha);
+    private static native long create_2();
 
     // native support for java finalize()
     private static native void delete(long nativeObj);

@@ -19,33 +19,6 @@ public class GraphSegmentation extends Algorithm {
     public static GraphSegmentation __fromPtr__(long addr) { return new GraphSegmentation(addr); }
 
     //
-    // C++:  double cv::ximgproc::segmentation::GraphSegmentation::getSigma()
-    //
-
-    public double getSigma() {
-        return getSigma_0(nativeObj);
-    }
-
-
-    //
-    // C++:  float cv::ximgproc::segmentation::GraphSegmentation::getK()
-    //
-
-    public float getK() {
-        return getK_0(nativeObj);
-    }
-
-
-    //
-    // C++:  int cv::ximgproc::segmentation::GraphSegmentation::getMinSize()
-    //
-
-    public int getMinSize() {
-        return getMinSize_0(nativeObj);
-    }
-
-
-    //
     // C++:  void cv::ximgproc::segmentation::GraphSegmentation::processImage(Mat src, Mat& dst)
     //
 
@@ -60,11 +33,38 @@ public class GraphSegmentation extends Algorithm {
 
 
     //
+    // C++:  void cv::ximgproc::segmentation::GraphSegmentation::setSigma(double sigma)
+    //
+
+    public void setSigma(double sigma) {
+        setSigma_0(nativeObj, sigma);
+    }
+
+
+    //
+    // C++:  double cv::ximgproc::segmentation::GraphSegmentation::getSigma()
+    //
+
+    public double getSigma() {
+        return getSigma_0(nativeObj);
+    }
+
+
+    //
     // C++:  void cv::ximgproc::segmentation::GraphSegmentation::setK(float k)
     //
 
     public void setK(float k) {
         setK_0(nativeObj, k);
+    }
+
+
+    //
+    // C++:  float cv::ximgproc::segmentation::GraphSegmentation::getK()
+    //
+
+    public float getK() {
+        return getK_0(nativeObj);
     }
 
 
@@ -78,11 +78,11 @@ public class GraphSegmentation extends Algorithm {
 
 
     //
-    // C++:  void cv::ximgproc::segmentation::GraphSegmentation::setSigma(double sigma)
+    // C++:  int cv::ximgproc::segmentation::GraphSegmentation::getMinSize()
     //
 
-    public void setSigma(double sigma) {
-        setSigma_0(nativeObj, sigma);
+    public int getMinSize() {
+        return getMinSize_0(nativeObj);
     }
 
 
@@ -93,26 +93,26 @@ public class GraphSegmentation extends Algorithm {
 
 
 
-    // C++:  double cv::ximgproc::segmentation::GraphSegmentation::getSigma()
-    private static native double getSigma_0(long nativeObj);
-
-    // C++:  float cv::ximgproc::segmentation::GraphSegmentation::getK()
-    private static native float getK_0(long nativeObj);
-
-    // C++:  int cv::ximgproc::segmentation::GraphSegmentation::getMinSize()
-    private static native int getMinSize_0(long nativeObj);
-
     // C++:  void cv::ximgproc::segmentation::GraphSegmentation::processImage(Mat src, Mat& dst)
     private static native void processImage_0(long nativeObj, long src_nativeObj, long dst_nativeObj);
+
+    // C++:  void cv::ximgproc::segmentation::GraphSegmentation::setSigma(double sigma)
+    private static native void setSigma_0(long nativeObj, double sigma);
+
+    // C++:  double cv::ximgproc::segmentation::GraphSegmentation::getSigma()
+    private static native double getSigma_0(long nativeObj);
 
     // C++:  void cv::ximgproc::segmentation::GraphSegmentation::setK(float k)
     private static native void setK_0(long nativeObj, float k);
 
+    // C++:  float cv::ximgproc::segmentation::GraphSegmentation::getK()
+    private static native float getK_0(long nativeObj);
+
     // C++:  void cv::ximgproc::segmentation::GraphSegmentation::setMinSize(int min_size)
     private static native void setMinSize_0(long nativeObj, int min_size);
 
-    // C++:  void cv::ximgproc::segmentation::GraphSegmentation::setSigma(double sigma)
-    private static native void setSigma_0(long nativeObj, double sigma);
+    // C++:  int cv::ximgproc::segmentation::GraphSegmentation::getMinSize()
+    private static native int getMinSize_0(long nativeObj);
 
     // native support for java finalize()
     private static native void delete(long nativeObj);

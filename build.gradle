@@ -90,20 +90,27 @@
 
 apply plugin: 'com.android.library'
 
-def openCVersionName = "4.5.0"
-def openCVersionCode = ((4 * 100 + 5) * 100 + 0) * 10 + 0
+def openCVersionName = "4.5.1"
+def openCVersionCode = ((4 * 100 + 5) * 100 + 1) * 10 + 0
 
 println "OpenCV: " +openCVersionName + " " + project.buildscript.sourceFile
 
 android {
-    compileSdkVersion 28
+    compileSdkVersion 26
 
     defaultConfig {
         minSdkVersion 21
-        targetSdkVersion 28
+        targetSdkVersion 26
 
         versionCode openCVersionCode
         versionName openCVersionName
+
+        externalNativeBuild {
+            cmake {
+                arguments "-DANDROID_STL=c++_static"
+                // targets "opencv_jni_shared"
+            }
+        }
     }
 
     buildTypes {
@@ -121,8 +128,8 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_1_6
+        targetCompatibility JavaVersion.VERSION_1_6
     }
 
     sourceSets {

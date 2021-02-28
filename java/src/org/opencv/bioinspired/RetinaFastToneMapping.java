@@ -43,15 +43,6 @@ public class RetinaFastToneMapping extends Algorithm {
     public static RetinaFastToneMapping __fromPtr__(long addr) { return new RetinaFastToneMapping(addr); }
 
     //
-    // C++: static Ptr_RetinaFastToneMapping cv::bioinspired::RetinaFastToneMapping::create(Size inputSize)
-    //
-
-    public static RetinaFastToneMapping create(Size inputSize) {
-        return RetinaFastToneMapping.__fromPtr__(create_0(inputSize.width, inputSize.height));
-    }
-
-
-    //
     // C++:  void cv::bioinspired::RetinaFastToneMapping::applyFastToneMapping(Mat inputImage, Mat& outputToneMappedImage)
     //
 
@@ -124,15 +115,21 @@ public class RetinaFastToneMapping extends Algorithm {
     }
 
 
+    //
+    // C++: static Ptr_RetinaFastToneMapping cv::bioinspired::RetinaFastToneMapping::create(Size inputSize)
+    //
+
+    public static RetinaFastToneMapping create(Size inputSize) {
+        return RetinaFastToneMapping.__fromPtr__(create_0(inputSize.width, inputSize.height));
+    }
+
+
     @Override
     protected void finalize() throws Throwable {
         delete(nativeObj);
     }
 
 
-
-    // C++: static Ptr_RetinaFastToneMapping cv::bioinspired::RetinaFastToneMapping::create(Size inputSize)
-    private static native long create_0(double inputSize_width, double inputSize_height);
 
     // C++:  void cv::bioinspired::RetinaFastToneMapping::applyFastToneMapping(Mat inputImage, Mat& outputToneMappedImage)
     private static native void applyFastToneMapping_0(long nativeObj, long inputImage_nativeObj, long outputToneMappedImage_nativeObj);
@@ -142,6 +139,9 @@ public class RetinaFastToneMapping extends Algorithm {
     private static native void setup_1(long nativeObj, float photoreceptorsNeighborhoodRadius, float ganglioncellsNeighborhoodRadius);
     private static native void setup_2(long nativeObj, float photoreceptorsNeighborhoodRadius);
     private static native void setup_3(long nativeObj);
+
+    // C++: static Ptr_RetinaFastToneMapping cv::bioinspired::RetinaFastToneMapping::create(Size inputSize)
+    private static native long create_0(double inputSize_width, double inputSize_height);
 
     // native support for java finalize()
     private static native void delete(long nativeObj);

@@ -50,6 +50,74 @@ public class GrayCodePattern extends StructuredLightPattern {
 
 
     //
+    // C++:  size_t cv::structured_light::GrayCodePattern::getNumberOfPatternImages()
+    //
+
+    /**
+     * Get the number of pattern images needed for the graycode pattern.
+     *
+     * @return The number of pattern images needed for the graycode pattern.
+     *
+     */
+    public long getNumberOfPatternImages() {
+        return getNumberOfPatternImages_0(nativeObj);
+    }
+
+
+    //
+    // C++:  void cv::structured_light::GrayCodePattern::setWhiteThreshold(size_t value)
+    //
+
+    /**
+     * Sets the value for white threshold, needed for decoding.
+     *
+     * White threshold is a number between 0-255 that represents the minimum brightness difference required for valid pixels, between the graycode pattern and its inverse images; used in getProjPixel method.
+     *
+     * @param value The desired white threshold value.
+     *
+     */
+    public void setWhiteThreshold(long value) {
+        setWhiteThreshold_0(nativeObj, value);
+    }
+
+
+    //
+    // C++:  void cv::structured_light::GrayCodePattern::setBlackThreshold(size_t value)
+    //
+
+    /**
+     * Sets the value for black threshold, needed for decoding (shadowsmasks computation).
+     *
+     * Black threshold is a number between 0-255 that represents the minimum brightness difference required for valid pixels, between the fully illuminated (white) and the not illuminated images (black); used in computeShadowMasks method.
+     *
+     * @param value The desired black threshold value.
+     *
+     */
+    public void setBlackThreshold(long value) {
+        setBlackThreshold_0(nativeObj, value);
+    }
+
+
+    //
+    // C++:  void cv::structured_light::GrayCodePattern::getImagesForShadowMasks(Mat& blackImage, Mat& whiteImage)
+    //
+
+    /**
+     * Generates the all-black and all-white images needed for shadowMasks computation.
+     *
+     * To identify shadow regions, the regions of two images where the pixels are not lit by projector's light and thus where there is not coded information,
+     * the 3DUNDERWORLD algorithm computes a shadow mask for the two cameras views, starting from a white and a black images captured by each camera.
+     * This method generates these two additional images to project.
+     *
+     * @param blackImage The generated all-black CV_8U image, at projector's resolution.
+     * @param whiteImage The generated all-white CV_8U image, at projector's resolution.
+     */
+    public void getImagesForShadowMasks(Mat blackImage, Mat whiteImage) {
+        getImagesForShadowMasks_0(nativeObj, blackImage.nativeObj, whiteImage.nativeObj);
+    }
+
+
+    //
     // C++:  bool cv::structured_light::GrayCodePattern::getProjPixel(vector_Mat patternImages, int x, int y, Point& projPix)
     //
 
@@ -74,74 +142,6 @@ public class GrayCodePattern extends StructuredLightPattern {
     }
 
 
-    //
-    // C++:  size_t cv::structured_light::GrayCodePattern::getNumberOfPatternImages()
-    //
-
-    /**
-     * Get the number of pattern images needed for the graycode pattern.
-     *
-     * @return The number of pattern images needed for the graycode pattern.
-     *
-     */
-    public long getNumberOfPatternImages() {
-        return getNumberOfPatternImages_0(nativeObj);
-    }
-
-
-    //
-    // C++:  void cv::structured_light::GrayCodePattern::getImagesForShadowMasks(Mat& blackImage, Mat& whiteImage)
-    //
-
-    /**
-     * Generates the all-black and all-white images needed for shadowMasks computation.
-     *
-     * To identify shadow regions, the regions of two images where the pixels are not lit by projector's light and thus where there is not coded information,
-     * the 3DUNDERWORLD algorithm computes a shadow mask for the two cameras views, starting from a white and a black images captured by each camera.
-     * This method generates these two additional images to project.
-     *
-     * @param blackImage The generated all-black CV_8U image, at projector's resolution.
-     * @param whiteImage The generated all-white CV_8U image, at projector's resolution.
-     */
-    public void getImagesForShadowMasks(Mat blackImage, Mat whiteImage) {
-        getImagesForShadowMasks_0(nativeObj, blackImage.nativeObj, whiteImage.nativeObj);
-    }
-
-
-    //
-    // C++:  void cv::structured_light::GrayCodePattern::setBlackThreshold(size_t value)
-    //
-
-    /**
-     * Sets the value for black threshold, needed for decoding (shadowsmasks computation).
-     *
-     * Black threshold is a number between 0-255 that represents the minimum brightness difference required for valid pixels, between the fully illuminated (white) and the not illuminated images (black); used in computeShadowMasks method.
-     *
-     * @param value The desired black threshold value.
-     *
-     */
-    public void setBlackThreshold(long value) {
-        setBlackThreshold_0(nativeObj, value);
-    }
-
-
-    //
-    // C++:  void cv::structured_light::GrayCodePattern::setWhiteThreshold(size_t value)
-    //
-
-    /**
-     * Sets the value for white threshold, needed for decoding.
-     *
-     * White threshold is a number between 0-255 that represents the minimum brightness difference required for valid pixels, between the graycode pattern and its inverse images; used in getProjPixel method.
-     *
-     * @param value The desired white threshold value.
-     *
-     */
-    public void setWhiteThreshold(long value) {
-        setWhiteThreshold_0(nativeObj, value);
-    }
-
-
     @Override
     protected void finalize() throws Throwable {
         delete(nativeObj);
@@ -152,20 +152,20 @@ public class GrayCodePattern extends StructuredLightPattern {
     // C++: static Ptr_GrayCodePattern cv::structured_light::GrayCodePattern::create(int width, int height)
     private static native long create_0(int width, int height);
 
-    // C++:  bool cv::structured_light::GrayCodePattern::getProjPixel(vector_Mat patternImages, int x, int y, Point& projPix)
-    private static native boolean getProjPixel_0(long nativeObj, long patternImages_mat_nativeObj, int x, int y, double[] projPix_out);
-
     // C++:  size_t cv::structured_light::GrayCodePattern::getNumberOfPatternImages()
     private static native long getNumberOfPatternImages_0(long nativeObj);
 
-    // C++:  void cv::structured_light::GrayCodePattern::getImagesForShadowMasks(Mat& blackImage, Mat& whiteImage)
-    private static native void getImagesForShadowMasks_0(long nativeObj, long blackImage_nativeObj, long whiteImage_nativeObj);
+    // C++:  void cv::structured_light::GrayCodePattern::setWhiteThreshold(size_t value)
+    private static native void setWhiteThreshold_0(long nativeObj, long value);
 
     // C++:  void cv::structured_light::GrayCodePattern::setBlackThreshold(size_t value)
     private static native void setBlackThreshold_0(long nativeObj, long value);
 
-    // C++:  void cv::structured_light::GrayCodePattern::setWhiteThreshold(size_t value)
-    private static native void setWhiteThreshold_0(long nativeObj, long value);
+    // C++:  void cv::structured_light::GrayCodePattern::getImagesForShadowMasks(Mat& blackImage, Mat& whiteImage)
+    private static native void getImagesForShadowMasks_0(long nativeObj, long blackImage_nativeObj, long whiteImage_nativeObj);
+
+    // C++:  bool cv::structured_light::GrayCodePattern::getProjPixel(vector_Mat patternImages, int x, int y, Point& projPix)
+    private static native boolean getProjPixel_0(long nativeObj, long patternImages_mat_nativeObj, int x, int y, double[] projPix_out);
 
     // native support for java finalize()
     private static native void delete(long nativeObj);

@@ -20,30 +20,6 @@ public class ContourFitting extends Algorithm {
     public static ContourFitting __fromPtr__(long addr) { return new ContourFitting(addr); }
 
     //
-    // C++:  int cv::ximgproc::ContourFitting::getCtrSize()
-    //
-
-    /**
-     * @return number of fourier descriptors
-     */
-    public int getCtrSize() {
-        return getCtrSize_0(nativeObj);
-    }
-
-
-    //
-    // C++:  int cv::ximgproc::ContourFitting::getFDSize()
-    //
-
-    /**
-     * @return number of fourier descriptors used for optimal curve matching
-     */
-    public int getFDSize() {
-        return getFDSize_0(nativeObj);
-    }
-
-
-    //
     // C++:  void cv::ximgproc::ContourFitting::estimateTransformation(Mat src, Mat dst, Mat& alphaPhiST, double& dist, bool fdContour = false)
     //
 
@@ -105,18 +81,36 @@ public class ContourFitting extends Algorithm {
     }
 
 
+    //
+    // C++:  int cv::ximgproc::ContourFitting::getCtrSize()
+    //
+
+    /**
+     * @return number of fourier descriptors
+     */
+    public int getCtrSize() {
+        return getCtrSize_0(nativeObj);
+    }
+
+
+    //
+    // C++:  int cv::ximgproc::ContourFitting::getFDSize()
+    //
+
+    /**
+     * @return number of fourier descriptors used for optimal curve matching
+     */
+    public int getFDSize() {
+        return getFDSize_0(nativeObj);
+    }
+
+
     @Override
     protected void finalize() throws Throwable {
         delete(nativeObj);
     }
 
 
-
-    // C++:  int cv::ximgproc::ContourFitting::getCtrSize()
-    private static native int getCtrSize_0(long nativeObj);
-
-    // C++:  int cv::ximgproc::ContourFitting::getFDSize()
-    private static native int getFDSize_0(long nativeObj);
 
     // C++:  void cv::ximgproc::ContourFitting::estimateTransformation(Mat src, Mat dst, Mat& alphaPhiST, double& dist, bool fdContour = false)
     private static native void estimateTransformation_0(long nativeObj, long src_nativeObj, long dst_nativeObj, long alphaPhiST_nativeObj, double[] dist_out, boolean fdContour);
@@ -127,6 +121,12 @@ public class ContourFitting extends Algorithm {
 
     // C++:  void cv::ximgproc::ContourFitting::setFDSize(int n)
     private static native void setFDSize_0(long nativeObj, int n);
+
+    // C++:  int cv::ximgproc::ContourFitting::getCtrSize()
+    private static native int getCtrSize_0(long nativeObj);
+
+    // C++:  int cv::ximgproc::ContourFitting::getFDSize()
+    private static native int getFDSize_0(long nativeObj);
 
     // native support for java finalize()
     private static native void delete(long nativeObj);

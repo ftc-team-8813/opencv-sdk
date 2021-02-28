@@ -18,6 +18,20 @@ public class ImgHashBase extends Algorithm {
     public static ImgHashBase __fromPtr__(long addr) { return new ImgHashBase(addr); }
 
     //
+    // C++:  void cv::img_hash::ImgHashBase::compute(Mat inputArr, Mat& outputArr)
+    //
+
+    /**
+     * Computes hash of the input image
+     *         @param inputArr input image want to compute hash value
+     *         @param outputArr hash of the image
+     */
+    public void compute(Mat inputArr, Mat outputArr) {
+        compute_0(nativeObj, inputArr.nativeObj, outputArr.nativeObj);
+    }
+
+
+    //
     // C++:  double cv::img_hash::ImgHashBase::compare(Mat hashOne, Mat hashTwo)
     //
 
@@ -33,20 +47,6 @@ public class ImgHashBase extends Algorithm {
     }
 
 
-    //
-    // C++:  void cv::img_hash::ImgHashBase::compute(Mat inputArr, Mat& outputArr)
-    //
-
-    /**
-     * Computes hash of the input image
-     *         @param inputArr input image want to compute hash value
-     *         @param outputArr hash of the image
-     */
-    public void compute(Mat inputArr, Mat outputArr) {
-        compute_0(nativeObj, inputArr.nativeObj, outputArr.nativeObj);
-    }
-
-
     @Override
     protected void finalize() throws Throwable {
         delete(nativeObj);
@@ -54,11 +54,11 @@ public class ImgHashBase extends Algorithm {
 
 
 
-    // C++:  double cv::img_hash::ImgHashBase::compare(Mat hashOne, Mat hashTwo)
-    private static native double compare_0(long nativeObj, long hashOne_nativeObj, long hashTwo_nativeObj);
-
     // C++:  void cv::img_hash::ImgHashBase::compute(Mat inputArr, Mat& outputArr)
     private static native void compute_0(long nativeObj, long inputArr_nativeObj, long outputArr_nativeObj);
+
+    // C++:  double cv::img_hash::ImgHashBase::compare(Mat hashOne, Mat hashTwo)
+    private static native double compare_0(long nativeObj, long hashOne_nativeObj, long hashTwo_nativeObj);
 
     // native support for java finalize()
     private static native void delete(long nativeObj);

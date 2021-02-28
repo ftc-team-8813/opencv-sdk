@@ -3,8 +3,9 @@
 //
 package org.opencv.tracking;
 
-import org.opencv.tracking.Tracker;
 import org.opencv.tracking.TrackerKCF;
+import org.opencv.tracking.TrackerKCF_Params;
+import org.opencv.video.Tracker;
 
 // C++: class TrackerKCF
 /**
@@ -23,7 +24,7 @@ public class TrackerKCF extends Tracker {
     // internal usage only
     public static TrackerKCF __fromPtr__(long addr) { return new TrackerKCF(addr); }
 
-    // C++: enum MODE
+    // C++: enum MODE (cv.TrackerKCF.MODE)
     public static final int
             GRAY = (1 << 0),
             CN = (1 << 1),
@@ -31,15 +32,24 @@ public class TrackerKCF extends Tracker {
 
 
     //
-    // C++: static Ptr_TrackerKCF cv::TrackerKCF::create()
+    // C++: static Ptr_TrackerKCF cv::TrackerKCF::create(TrackerKCF_Params parameters = TrackerKCF::Params())
     //
 
     /**
-     * Constructor
+     * Create KCF tracker instance
+     *     @param parameters KCF parameters TrackerKCF::Params
+     * @return automatically generated
+     */
+    public static TrackerKCF create(TrackerKCF_Params parameters) {
+        return TrackerKCF.__fromPtr__(create_0(parameters.nativeObj));
+    }
+
+    /**
+     * Create KCF tracker instance
      * @return automatically generated
      */
     public static TrackerKCF create() {
-        return TrackerKCF.__fromPtr__(create_0());
+        return TrackerKCF.__fromPtr__(create_1());
     }
 
 
@@ -50,8 +60,9 @@ public class TrackerKCF extends Tracker {
 
 
 
-    // C++: static Ptr_TrackerKCF cv::TrackerKCF::create()
-    private static native long create_0();
+    // C++: static Ptr_TrackerKCF cv::TrackerKCF::create(TrackerKCF_Params parameters = TrackerKCF::Params())
+    private static native long create_0(long parameters_nativeObj);
+    private static native long create_1();
 
     // native support for java finalize()
     private static native void delete(long nativeObj);

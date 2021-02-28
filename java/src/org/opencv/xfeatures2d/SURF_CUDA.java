@@ -69,7 +69,7 @@ public class SURF_CUDA {
     // internal usage only
     public static SURF_CUDA __fromPtr__(long addr) { return new SURF_CUDA(addr); }
 
-    // C++: enum KeypointLayout
+    // C++: enum KeypointLayout (cv.cuda.SURF_CUDA.KeypointLayout)
     public static final int
             X_ROW = 0,
             Y_ROW = 0+1,
@@ -162,6 +162,15 @@ public class SURF_CUDA {
 
 
     //
+    // C++:  int cv::cuda::SURF_CUDA::descriptorSize()
+    //
+
+    public int descriptorSize() {
+        return descriptorSize_0(nativeObj);
+    }
+
+
+    //
     // C++:  int cv::cuda::SURF_CUDA::defaultNorm()
     //
 
@@ -171,12 +180,10 @@ public class SURF_CUDA {
 
 
     //
-    // C++:  int cv::cuda::SURF_CUDA::descriptorSize()
+    // C++:  void cv::cuda::SURF_CUDA::downloadKeypoints(GpuMat keypointsGPU, vector_KeyPoint& keypoints)
     //
 
-    public int descriptorSize() {
-        return descriptorSize_0(nativeObj);
-    }
+    // Unknown type 'GpuMat' (I), skipping the function
 
 
     //
@@ -188,13 +195,6 @@ public class SURF_CUDA {
 
     //
     // C++:  void cv::cuda::SURF_CUDA::detectWithDescriptors(GpuMat img, GpuMat mask, GpuMat& keypoints, GpuMat& descriptors, bool useProvidedKeypoints = false)
-    //
-
-    // Unknown type 'GpuMat' (I), skipping the function
-
-
-    //
-    // C++:  void cv::cuda::SURF_CUDA::downloadKeypoints(GpuMat keypointsGPU, vector_KeyPoint& keypoints)
     //
 
     // Unknown type 'GpuMat' (I), skipping the function
@@ -269,11 +269,11 @@ public class SURF_CUDA {
     private static native long create_4(double _hessianThreshold, int _nOctaves);
     private static native long create_5(double _hessianThreshold);
 
-    // C++:  int cv::cuda::SURF_CUDA::defaultNorm()
-    private static native int defaultNorm_0(long nativeObj);
-
     // C++:  int cv::cuda::SURF_CUDA::descriptorSize()
     private static native int descriptorSize_0(long nativeObj);
+
+    // C++:  int cv::cuda::SURF_CUDA::defaultNorm()
+    private static native int defaultNorm_0(long nativeObj);
 
     // C++: double SURF_CUDA::hessianThreshold
     private static native double get_hessianThreshold_0(long nativeObj);

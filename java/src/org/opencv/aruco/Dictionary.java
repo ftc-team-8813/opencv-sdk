@@ -28,31 +28,28 @@ public class Dictionary {
     public static Dictionary __fromPtr__(long addr) { return new Dictionary(addr); }
 
     //
-    // C++: static Mat cv::aruco::Dictionary::getBitsFromByteList(Mat byteList, int markerSize)
+    // C++: static Ptr_Dictionary cv::aruco::Dictionary::create(int nMarkers, int markerSize, int randomSeed = 0)
     //
 
     /**
-     * Transform list of bytes to matrix of bits
-     * @param byteList automatically generated
+     * SEE: generateCustomDictionary
+     * @param nMarkers automatically generated
+     * @param markerSize automatically generated
+     * @param randomSeed automatically generated
+     * @return automatically generated
+     */
+    public static Dictionary create(int nMarkers, int markerSize, int randomSeed) {
+        return Dictionary.__fromPtr__(create_0(nMarkers, markerSize, randomSeed));
+    }
+
+    /**
+     * SEE: generateCustomDictionary
+     * @param nMarkers automatically generated
      * @param markerSize automatically generated
      * @return automatically generated
      */
-    public static Mat getBitsFromByteList(Mat byteList, int markerSize) {
-        return new Mat(getBitsFromByteList_0(byteList.nativeObj, markerSize));
-    }
-
-
-    //
-    // C++: static Mat cv::aruco::Dictionary::getByteListFromBits(Mat bits)
-    //
-
-    /**
-     * Transform matrix of bits to list of bytes in the 4 rotations
-     * @param bits automatically generated
-     * @return automatically generated
-     */
-    public static Mat getByteListFromBits(Mat bits) {
-        return new Mat(getByteListFromBits_0(bits.nativeObj));
+    public static Dictionary create(int nMarkers, int markerSize) {
+        return Dictionary.__fromPtr__(create_1(nMarkers, markerSize));
     }
 
 
@@ -81,32 +78,6 @@ public class Dictionary {
      */
     public static Dictionary create_from(int nMarkers, int markerSize, Dictionary baseDictionary) {
         return Dictionary.__fromPtr__(create_from_1(nMarkers, markerSize, baseDictionary.getNativeObjAddr()));
-    }
-
-
-    //
-    // C++: static Ptr_Dictionary cv::aruco::Dictionary::create(int nMarkers, int markerSize, int randomSeed = 0)
-    //
-
-    /**
-     * SEE: generateCustomDictionary
-     * @param nMarkers automatically generated
-     * @param markerSize automatically generated
-     * @param randomSeed automatically generated
-     * @return automatically generated
-     */
-    public static Dictionary create(int nMarkers, int markerSize, int randomSeed) {
-        return Dictionary.__fromPtr__(create_0(nMarkers, markerSize, randomSeed));
-    }
-
-    /**
-     * SEE: generateCustomDictionary
-     * @param nMarkers automatically generated
-     * @param markerSize automatically generated
-     * @return automatically generated
-     */
-    public static Dictionary create(int nMarkers, int markerSize) {
-        return Dictionary.__fromPtr__(create_1(nMarkers, markerSize));
     }
 
 
@@ -147,6 +118,35 @@ public class Dictionary {
      */
     public void drawMarker(int id, int sidePixels, Mat _img) {
         drawMarker_1(nativeObj, id, sidePixels, _img.nativeObj);
+    }
+
+
+    //
+    // C++: static Mat cv::aruco::Dictionary::getByteListFromBits(Mat bits)
+    //
+
+    /**
+     * Transform matrix of bits to list of bytes in the 4 rotations
+     * @param bits automatically generated
+     * @return automatically generated
+     */
+    public static Mat getByteListFromBits(Mat bits) {
+        return new Mat(getByteListFromBits_0(bits.nativeObj));
+    }
+
+
+    //
+    // C++: static Mat cv::aruco::Dictionary::getBitsFromByteList(Mat byteList, int markerSize)
+    //
+
+    /**
+     * Transform list of bytes to matrix of bits
+     * @param byteList automatically generated
+     * @param markerSize automatically generated
+     * @return automatically generated
+     */
+    public static Mat getBitsFromByteList(Mat byteList, int markerSize) {
+        return new Mat(getBitsFromByteList_0(byteList.nativeObj, markerSize));
     }
 
 
@@ -211,19 +211,13 @@ public class Dictionary {
 
 
 
-    // C++: static Mat cv::aruco::Dictionary::getBitsFromByteList(Mat byteList, int markerSize)
-    private static native long getBitsFromByteList_0(long byteList_nativeObj, int markerSize);
-
-    // C++: static Mat cv::aruco::Dictionary::getByteListFromBits(Mat bits)
-    private static native long getByteListFromBits_0(long bits_nativeObj);
+    // C++: static Ptr_Dictionary cv::aruco::Dictionary::create(int nMarkers, int markerSize, int randomSeed = 0)
+    private static native long create_0(int nMarkers, int markerSize, int randomSeed);
+    private static native long create_1(int nMarkers, int markerSize);
 
     // C++: static Ptr_Dictionary cv::aruco::Dictionary::create(int nMarkers, int markerSize, Ptr_Dictionary baseDictionary, int randomSeed = 0)
     private static native long create_from_0(int nMarkers, int markerSize, long baseDictionary_nativeObj, int randomSeed);
     private static native long create_from_1(int nMarkers, int markerSize, long baseDictionary_nativeObj);
-
-    // C++: static Ptr_Dictionary cv::aruco::Dictionary::create(int nMarkers, int markerSize, int randomSeed = 0)
-    private static native long create_0(int nMarkers, int markerSize, int randomSeed);
-    private static native long create_1(int nMarkers, int markerSize);
 
     // C++: static Ptr_Dictionary cv::aruco::Dictionary::get(int dict)
     private static native long get_0(int dict);
@@ -231,6 +225,12 @@ public class Dictionary {
     // C++:  void cv::aruco::Dictionary::drawMarker(int id, int sidePixels, Mat& _img, int borderBits = 1)
     private static native void drawMarker_0(long nativeObj, int id, int sidePixels, long _img_nativeObj, int borderBits);
     private static native void drawMarker_1(long nativeObj, int id, int sidePixels, long _img_nativeObj);
+
+    // C++: static Mat cv::aruco::Dictionary::getByteListFromBits(Mat bits)
+    private static native long getByteListFromBits_0(long bits_nativeObj);
+
+    // C++: static Mat cv::aruco::Dictionary::getBitsFromByteList(Mat byteList, int markerSize)
+    private static native long getBitsFromByteList_0(long byteList_nativeObj, int markerSize);
 
     // C++: Mat Dictionary::bytesList
     private static native long get_bytesList_0(long nativeObj);

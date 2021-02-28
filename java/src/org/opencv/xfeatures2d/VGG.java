@@ -65,38 +65,11 @@ public class VGG extends Feature2D {
 
 
     //
-    // C++:  bool cv::xfeatures2d::VGG::getUseNormalizeDescriptor()
+    // C++:  void cv::xfeatures2d::VGG::setSigma(float isigma)
     //
 
-    public boolean getUseNormalizeDescriptor() {
-        return getUseNormalizeDescriptor_0(nativeObj);
-    }
-
-
-    //
-    // C++:  bool cv::xfeatures2d::VGG::getUseNormalizeImage()
-    //
-
-    public boolean getUseNormalizeImage() {
-        return getUseNormalizeImage_0(nativeObj);
-    }
-
-
-    //
-    // C++:  bool cv::xfeatures2d::VGG::getUseScaleOrientation()
-    //
-
-    public boolean getUseScaleOrientation() {
-        return getUseScaleOrientation_0(nativeObj);
-    }
-
-
-    //
-    // C++:  float cv::xfeatures2d::VGG::getScaleFactor()
-    //
-
-    public float getScaleFactor() {
-        return getScaleFactor_0(nativeObj);
+    public void setSigma(float isigma) {
+        setSigma_0(nativeObj, isigma);
     }
 
 
@@ -110,6 +83,42 @@ public class VGG extends Feature2D {
 
 
     //
+    // C++:  void cv::xfeatures2d::VGG::setUseNormalizeImage(bool img_normalize)
+    //
+
+    public void setUseNormalizeImage(boolean img_normalize) {
+        setUseNormalizeImage_0(nativeObj, img_normalize);
+    }
+
+
+    //
+    // C++:  bool cv::xfeatures2d::VGG::getUseNormalizeImage()
+    //
+
+    public boolean getUseNormalizeImage() {
+        return getUseNormalizeImage_0(nativeObj);
+    }
+
+
+    //
+    // C++:  void cv::xfeatures2d::VGG::setUseScaleOrientation(bool use_scale_orientation)
+    //
+
+    public void setUseScaleOrientation(boolean use_scale_orientation) {
+        setUseScaleOrientation_0(nativeObj, use_scale_orientation);
+    }
+
+
+    //
+    // C++:  bool cv::xfeatures2d::VGG::getUseScaleOrientation()
+    //
+
+    public boolean getUseScaleOrientation() {
+        return getUseScaleOrientation_0(nativeObj);
+    }
+
+
+    //
     // C++:  void cv::xfeatures2d::VGG::setScaleFactor(float scale_factor)
     //
 
@@ -119,11 +128,11 @@ public class VGG extends Feature2D {
 
 
     //
-    // C++:  void cv::xfeatures2d::VGG::setSigma(float isigma)
+    // C++:  float cv::xfeatures2d::VGG::getScaleFactor()
     //
 
-    public void setSigma(float isigma) {
-        setSigma_0(nativeObj, isigma);
+    public float getScaleFactor() {
+        return getScaleFactor_0(nativeObj);
     }
 
 
@@ -137,20 +146,11 @@ public class VGG extends Feature2D {
 
 
     //
-    // C++:  void cv::xfeatures2d::VGG::setUseNormalizeImage(bool img_normalize)
+    // C++:  bool cv::xfeatures2d::VGG::getUseNormalizeDescriptor()
     //
 
-    public void setUseNormalizeImage(boolean img_normalize) {
-        setUseNormalizeImage_0(nativeObj, img_normalize);
-    }
-
-
-    //
-    // C++:  void cv::xfeatures2d::VGG::setUseScaleOrientation(bool use_scale_orientation)
-    //
-
-    public void setUseScaleOrientation(boolean use_scale_orientation) {
-        setUseScaleOrientation_0(nativeObj, use_scale_orientation);
+    public boolean getUseNormalizeDescriptor() {
+        return getUseNormalizeDescriptor_0(nativeObj);
     }
 
 
@@ -170,35 +170,35 @@ public class VGG extends Feature2D {
     private static native long create_5(int desc);
     private static native long create_6();
 
-    // C++:  bool cv::xfeatures2d::VGG::getUseNormalizeDescriptor()
-    private static native boolean getUseNormalizeDescriptor_0(long nativeObj);
-
-    // C++:  bool cv::xfeatures2d::VGG::getUseNormalizeImage()
-    private static native boolean getUseNormalizeImage_0(long nativeObj);
-
-    // C++:  bool cv::xfeatures2d::VGG::getUseScaleOrientation()
-    private static native boolean getUseScaleOrientation_0(long nativeObj);
-
-    // C++:  float cv::xfeatures2d::VGG::getScaleFactor()
-    private static native float getScaleFactor_0(long nativeObj);
+    // C++:  void cv::xfeatures2d::VGG::setSigma(float isigma)
+    private static native void setSigma_0(long nativeObj, float isigma);
 
     // C++:  float cv::xfeatures2d::VGG::getSigma()
     private static native float getSigma_0(long nativeObj);
 
+    // C++:  void cv::xfeatures2d::VGG::setUseNormalizeImage(bool img_normalize)
+    private static native void setUseNormalizeImage_0(long nativeObj, boolean img_normalize);
+
+    // C++:  bool cv::xfeatures2d::VGG::getUseNormalizeImage()
+    private static native boolean getUseNormalizeImage_0(long nativeObj);
+
+    // C++:  void cv::xfeatures2d::VGG::setUseScaleOrientation(bool use_scale_orientation)
+    private static native void setUseScaleOrientation_0(long nativeObj, boolean use_scale_orientation);
+
+    // C++:  bool cv::xfeatures2d::VGG::getUseScaleOrientation()
+    private static native boolean getUseScaleOrientation_0(long nativeObj);
+
     // C++:  void cv::xfeatures2d::VGG::setScaleFactor(float scale_factor)
     private static native void setScaleFactor_0(long nativeObj, float scale_factor);
 
-    // C++:  void cv::xfeatures2d::VGG::setSigma(float isigma)
-    private static native void setSigma_0(long nativeObj, float isigma);
+    // C++:  float cv::xfeatures2d::VGG::getScaleFactor()
+    private static native float getScaleFactor_0(long nativeObj);
 
     // C++:  void cv::xfeatures2d::VGG::setUseNormalizeDescriptor(bool dsc_normalize)
     private static native void setUseNormalizeDescriptor_0(long nativeObj, boolean dsc_normalize);
 
-    // C++:  void cv::xfeatures2d::VGG::setUseNormalizeImage(bool img_normalize)
-    private static native void setUseNormalizeImage_0(long nativeObj, boolean img_normalize);
-
-    // C++:  void cv::xfeatures2d::VGG::setUseScaleOrientation(bool use_scale_orientation)
-    private static native void setUseScaleOrientation_0(long nativeObj, boolean use_scale_orientation);
+    // C++:  bool cv::xfeatures2d::VGG::getUseNormalizeDescriptor()
+    private static native boolean getUseNormalizeDescriptor_0(long nativeObj);
 
     // native support for java finalize()
     private static native void delete(long nativeObj);

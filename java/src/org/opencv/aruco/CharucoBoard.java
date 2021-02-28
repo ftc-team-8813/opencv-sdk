@@ -30,56 +30,6 @@ public class CharucoBoard extends Board {
     public static CharucoBoard __fromPtr__(long addr) { return new CharucoBoard(addr); }
 
     //
-    // C++: static Ptr_CharucoBoard cv::aruco::CharucoBoard::create(int squaresX, int squaresY, float squareLength, float markerLength, Ptr_Dictionary dictionary)
-    //
-
-    /**
-     * Create a CharucoBoard object
-     *
-     * @param squaresX number of chessboard squares in X direction
-     * @param squaresY number of chessboard squares in Y direction
-     * @param squareLength chessboard square side length (normally in meters)
-     * @param markerLength marker side length (same unit than squareLength)
-     * @param dictionary dictionary of markers indicating the type of markers.
-     * The first markers in the dictionary are used to fill the white chessboard squares.
-     * @return the output CharucoBoard object
-     *
-     * This functions creates a CharucoBoard object given the number of squares in each direction
-     * and the size of the markers and chessboard squares.
-     */
-    public static CharucoBoard create(int squaresX, int squaresY, float squareLength, float markerLength, Dictionary dictionary) {
-        return CharucoBoard.__fromPtr__(create_0(squaresX, squaresY, squareLength, markerLength, dictionary.getNativeObjAddr()));
-    }
-
-
-    //
-    // C++:  Size cv::aruco::CharucoBoard::getChessboardSize()
-    //
-
-    public Size getChessboardSize() {
-        return new Size(getChessboardSize_0(nativeObj));
-    }
-
-
-    //
-    // C++:  float cv::aruco::CharucoBoard::getMarkerLength()
-    //
-
-    public float getMarkerLength() {
-        return getMarkerLength_0(nativeObj);
-    }
-
-
-    //
-    // C++:  float cv::aruco::CharucoBoard::getSquareLength()
-    //
-
-    public float getSquareLength() {
-        return getSquareLength_0(nativeObj);
-    }
-
-
-    //
     // C++:  void cv::aruco::CharucoBoard::draw(Size outSize, Mat& img, int marginSize = 0, int borderBits = 1)
     //
 
@@ -127,6 +77,56 @@ public class CharucoBoard extends Board {
 
 
     //
+    // C++: static Ptr_CharucoBoard cv::aruco::CharucoBoard::create(int squaresX, int squaresY, float squareLength, float markerLength, Ptr_Dictionary dictionary)
+    //
+
+    /**
+     * Create a CharucoBoard object
+     *
+     * @param squaresX number of chessboard squares in X direction
+     * @param squaresY number of chessboard squares in Y direction
+     * @param squareLength chessboard square side length (normally in meters)
+     * @param markerLength marker side length (same unit than squareLength)
+     * @param dictionary dictionary of markers indicating the type of markers.
+     * The first markers in the dictionary are used to fill the white chessboard squares.
+     * @return the output CharucoBoard object
+     *
+     * This functions creates a CharucoBoard object given the number of squares in each direction
+     * and the size of the markers and chessboard squares.
+     */
+    public static CharucoBoard create(int squaresX, int squaresY, float squareLength, float markerLength, Dictionary dictionary) {
+        return CharucoBoard.__fromPtr__(create_0(squaresX, squaresY, squareLength, markerLength, dictionary.getNativeObjAddr()));
+    }
+
+
+    //
+    // C++:  Size cv::aruco::CharucoBoard::getChessboardSize()
+    //
+
+    public Size getChessboardSize() {
+        return new Size(getChessboardSize_0(nativeObj));
+    }
+
+
+    //
+    // C++:  float cv::aruco::CharucoBoard::getSquareLength()
+    //
+
+    public float getSquareLength() {
+        return getSquareLength_0(nativeObj);
+    }
+
+
+    //
+    // C++:  float cv::aruco::CharucoBoard::getMarkerLength()
+    //
+
+    public float getMarkerLength() {
+        return getMarkerLength_0(nativeObj);
+    }
+
+
+    //
     // C++: vector_Point3f CharucoBoard::chessboardCorners
     //
 
@@ -156,22 +156,22 @@ public class CharucoBoard extends Board {
 
 
 
+    // C++:  void cv::aruco::CharucoBoard::draw(Size outSize, Mat& img, int marginSize = 0, int borderBits = 1)
+    private static native void draw_0(long nativeObj, double outSize_width, double outSize_height, long img_nativeObj, int marginSize, int borderBits);
+    private static native void draw_1(long nativeObj, double outSize_width, double outSize_height, long img_nativeObj, int marginSize);
+    private static native void draw_2(long nativeObj, double outSize_width, double outSize_height, long img_nativeObj);
+
     // C++: static Ptr_CharucoBoard cv::aruco::CharucoBoard::create(int squaresX, int squaresY, float squareLength, float markerLength, Ptr_Dictionary dictionary)
     private static native long create_0(int squaresX, int squaresY, float squareLength, float markerLength, long dictionary_nativeObj);
 
     // C++:  Size cv::aruco::CharucoBoard::getChessboardSize()
     private static native double[] getChessboardSize_0(long nativeObj);
 
-    // C++:  float cv::aruco::CharucoBoard::getMarkerLength()
-    private static native float getMarkerLength_0(long nativeObj);
-
     // C++:  float cv::aruco::CharucoBoard::getSquareLength()
     private static native float getSquareLength_0(long nativeObj);
 
-    // C++:  void cv::aruco::CharucoBoard::draw(Size outSize, Mat& img, int marginSize = 0, int borderBits = 1)
-    private static native void draw_0(long nativeObj, double outSize_width, double outSize_height, long img_nativeObj, int marginSize, int borderBits);
-    private static native void draw_1(long nativeObj, double outSize_width, double outSize_height, long img_nativeObj, int marginSize);
-    private static native void draw_2(long nativeObj, double outSize_width, double outSize_height, long img_nativeObj);
+    // C++:  float cv::aruco::CharucoBoard::getMarkerLength()
+    private static native float getMarkerLength_0(long nativeObj);
 
     // C++: vector_Point3f CharucoBoard::chessboardCorners
     private static native long get_chessboardCorners_0(long nativeObj);

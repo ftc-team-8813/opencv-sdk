@@ -37,20 +37,20 @@ public class RadialVarianceHash extends ImgHashBase {
 
 
     //
-    // C++:  double cv::img_hash::RadialVarianceHash::getSigma()
-    //
-
-    public double getSigma() {
-        return getSigma_0(nativeObj);
-    }
-
-
-    //
     // C++:  int cv::img_hash::RadialVarianceHash::getNumOfAngleLine()
     //
 
     public int getNumOfAngleLine() {
         return getNumOfAngleLine_0(nativeObj);
+    }
+
+
+    //
+    // C++:  double cv::img_hash::RadialVarianceHash::getSigma()
+    //
+
+    public double getSigma() {
+        return getSigma_0(nativeObj);
     }
 
 
@@ -84,11 +84,11 @@ public class RadialVarianceHash extends ImgHashBase {
     private static native long create_1(double sigma);
     private static native long create_2();
 
-    // C++:  double cv::img_hash::RadialVarianceHash::getSigma()
-    private static native double getSigma_0(long nativeObj);
-
     // C++:  int cv::img_hash::RadialVarianceHash::getNumOfAngleLine()
     private static native int getNumOfAngleLine_0(long nativeObj);
+
+    // C++:  double cv::img_hash::RadialVarianceHash::getSigma()
+    private static native double getSigma_0(long nativeObj);
 
     // C++:  void cv::img_hash::RadialVarianceHash::setNumOfAngleLine(int value)
     private static native void setNumOfAngleLine_0(long nativeObj, int value);

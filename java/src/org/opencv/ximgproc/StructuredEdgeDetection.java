@@ -18,21 +18,6 @@ public class StructuredEdgeDetection extends Algorithm {
     public static StructuredEdgeDetection __fromPtr__(long addr) { return new StructuredEdgeDetection(addr); }
 
     //
-    // C++:  void cv::ximgproc::StructuredEdgeDetection::computeOrientation(Mat _src, Mat& _dst)
-    //
-
-    /**
-     * The function computes orientation from edge image.
-     *
-     *     @param _src edge image.
-     *     @param _dst orientation image.
-     */
-    public void computeOrientation(Mat _src, Mat _dst) {
-        computeOrientation_0(nativeObj, _src.nativeObj, _dst.nativeObj);
-    }
-
-
-    //
     // C++:  void cv::ximgproc::StructuredEdgeDetection::detectEdges(Mat _src, Mat& _dst)
     //
 
@@ -47,6 +32,21 @@ public class StructuredEdgeDetection extends Algorithm {
      */
     public void detectEdges(Mat _src, Mat _dst) {
         detectEdges_0(nativeObj, _src.nativeObj, _dst.nativeObj);
+    }
+
+
+    //
+    // C++:  void cv::ximgproc::StructuredEdgeDetection::computeOrientation(Mat _src, Mat& _dst)
+    //
+
+    /**
+     * The function computes orientation from edge image.
+     *
+     *     @param _src edge image.
+     *     @param _dst orientation image.
+     */
+    public void computeOrientation(Mat _src, Mat _dst) {
+        computeOrientation_0(nativeObj, _src.nativeObj, _dst.nativeObj);
     }
 
 
@@ -127,11 +127,11 @@ public class StructuredEdgeDetection extends Algorithm {
 
 
 
-    // C++:  void cv::ximgproc::StructuredEdgeDetection::computeOrientation(Mat _src, Mat& _dst)
-    private static native void computeOrientation_0(long nativeObj, long _src_nativeObj, long _dst_nativeObj);
-
     // C++:  void cv::ximgproc::StructuredEdgeDetection::detectEdges(Mat _src, Mat& _dst)
     private static native void detectEdges_0(long nativeObj, long _src_nativeObj, long _dst_nativeObj);
+
+    // C++:  void cv::ximgproc::StructuredEdgeDetection::computeOrientation(Mat _src, Mat& _dst)
+    private static native void computeOrientation_0(long nativeObj, long _src_nativeObj, long _dst_nativeObj);
 
     // C++:  void cv::ximgproc::StructuredEdgeDetection::edgesNms(Mat edge_image, Mat orientation_image, Mat& _dst, int r = 2, int s = 0, float m = 1, bool isParallel = true)
     private static native void edgesNms_0(long nativeObj, long edge_image_nativeObj, long orientation_image_nativeObj, long _dst_nativeObj, int r, int s, float m, boolean isParallel);

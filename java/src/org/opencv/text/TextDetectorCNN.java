@@ -29,15 +29,6 @@ public class TextDetectorCNN extends TextDetector {
     public static TextDetectorCNN __fromPtr__(long addr) { return new TextDetectorCNN(addr); }
 
     //
-    // C++: static Ptr_TextDetectorCNN cv::text::TextDetectorCNN::create(String modelArchFilename, String modelWeightsFilename)
-    //
-
-    public static TextDetectorCNN create(String modelArchFilename, String modelWeightsFilename) {
-        return TextDetectorCNN.__fromPtr__(create_0(modelArchFilename, modelWeightsFilename));
-    }
-
-
-    //
     // C++:  void cv::text::TextDetectorCNN::detect(Mat inputImage, vector_Rect& Bbox, vector_float& confidence)
     //
 
@@ -55,6 +46,15 @@ public class TextDetectorCNN extends TextDetector {
     }
 
 
+    //
+    // C++: static Ptr_TextDetectorCNN cv::text::TextDetectorCNN::create(String modelArchFilename, String modelWeightsFilename)
+    //
+
+    public static TextDetectorCNN create(String modelArchFilename, String modelWeightsFilename) {
+        return TextDetectorCNN.__fromPtr__(create_0(modelArchFilename, modelWeightsFilename));
+    }
+
+
     @Override
     protected void finalize() throws Throwable {
         delete(nativeObj);
@@ -62,11 +62,11 @@ public class TextDetectorCNN extends TextDetector {
 
 
 
-    // C++: static Ptr_TextDetectorCNN cv::text::TextDetectorCNN::create(String modelArchFilename, String modelWeightsFilename)
-    private static native long create_0(String modelArchFilename, String modelWeightsFilename);
-
     // C++:  void cv::text::TextDetectorCNN::detect(Mat inputImage, vector_Rect& Bbox, vector_float& confidence)
     private static native void detect_0(long nativeObj, long inputImage_nativeObj, long Bbox_mat_nativeObj, long confidence_mat_nativeObj);
+
+    // C++: static Ptr_TextDetectorCNN cv::text::TextDetectorCNN::create(String modelArchFilename, String modelWeightsFilename)
+    private static native long create_0(String modelArchFilename, String modelWeightsFilename);
 
     // native support for java finalize()
     private static native void delete(long nativeObj);

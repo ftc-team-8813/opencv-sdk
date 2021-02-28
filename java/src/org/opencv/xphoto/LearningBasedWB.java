@@ -30,52 +30,6 @@ public class LearningBasedWB extends WhiteBalancer {
     public static LearningBasedWB __fromPtr__(long addr) { return new LearningBasedWB(addr); }
 
     //
-    // C++:  float cv::xphoto::LearningBasedWB::getSaturationThreshold()
-    //
-
-    /**
-     * Threshold that is used to determine saturated pixels, i.e. pixels where at least one of the
-     *         channels exceeds \(\texttt{saturation_threshold}\times\texttt{range_max_val}\) are ignored.
-     * SEE: setSaturationThreshold
-     * @return automatically generated
-     */
-    public float getSaturationThreshold() {
-        return getSaturationThreshold_0(nativeObj);
-    }
-
-
-    //
-    // C++:  int cv::xphoto::LearningBasedWB::getHistBinNum()
-    //
-
-    /**
-     * Defines the size of one dimension of a three-dimensional RGB histogram that is used internally
-     *         by the algorithm. It often makes sense to increase the number of bins for images with higher bit depth
-     *         (e.g. 256 bins for a 12 bit image).
-     * SEE: setHistBinNum
-     * @return automatically generated
-     */
-    public int getHistBinNum() {
-        return getHistBinNum_0(nativeObj);
-    }
-
-
-    //
-    // C++:  int cv::xphoto::LearningBasedWB::getRangeMaxVal()
-    //
-
-    /**
-     * Maximum possible value of the input image (e.g. 255 for 8 bit images,
-     *                4095 for 12 bit images)
-     * SEE: setRangeMaxVal
-     * @return automatically generated
-     */
-    public int getRangeMaxVal() {
-        return getRangeMaxVal_0(nativeObj);
-    }
-
-
-    //
     // C++:  void cv::xphoto::LearningBasedWB::extractSimpleFeatures(Mat src, Mat& dst)
     //
 
@@ -100,15 +54,17 @@ public class LearningBasedWB extends WhiteBalancer {
 
 
     //
-    // C++:  void cv::xphoto::LearningBasedWB::setHistBinNum(int val)
+    // C++:  int cv::xphoto::LearningBasedWB::getRangeMaxVal()
     //
 
     /**
-     *  getHistBinNum SEE: getHistBinNum
-     * @param val automatically generated
+     * Maximum possible value of the input image (e.g. 255 for 8 bit images,
+     *                4095 for 12 bit images)
+     * SEE: setRangeMaxVal
+     * @return automatically generated
      */
-    public void setHistBinNum(int val) {
-        setHistBinNum_0(nativeObj, val);
+    public int getRangeMaxVal() {
+        return getRangeMaxVal_0(nativeObj);
     }
 
 
@@ -126,6 +82,21 @@ public class LearningBasedWB extends WhiteBalancer {
 
 
     //
+    // C++:  float cv::xphoto::LearningBasedWB::getSaturationThreshold()
+    //
+
+    /**
+     * Threshold that is used to determine saturated pixels, i.e. pixels where at least one of the
+     *         channels exceeds \(\texttt{saturation_threshold}\times\texttt{range_max_val}\) are ignored.
+     * SEE: setSaturationThreshold
+     * @return automatically generated
+     */
+    public float getSaturationThreshold() {
+        return getSaturationThreshold_0(nativeObj);
+    }
+
+
+    //
     // C++:  void cv::xphoto::LearningBasedWB::setSaturationThreshold(float val)
     //
 
@@ -138,6 +109,35 @@ public class LearningBasedWB extends WhiteBalancer {
     }
 
 
+    //
+    // C++:  int cv::xphoto::LearningBasedWB::getHistBinNum()
+    //
+
+    /**
+     * Defines the size of one dimension of a three-dimensional RGB histogram that is used internally
+     *         by the algorithm. It often makes sense to increase the number of bins for images with higher bit depth
+     *         (e.g. 256 bins for a 12 bit image).
+     * SEE: setHistBinNum
+     * @return automatically generated
+     */
+    public int getHistBinNum() {
+        return getHistBinNum_0(nativeObj);
+    }
+
+
+    //
+    // C++:  void cv::xphoto::LearningBasedWB::setHistBinNum(int val)
+    //
+
+    /**
+     *  getHistBinNum SEE: getHistBinNum
+     * @param val automatically generated
+     */
+    public void setHistBinNum(int val) {
+        setHistBinNum_0(nativeObj, val);
+    }
+
+
     @Override
     protected void finalize() throws Throwable {
         delete(nativeObj);
@@ -145,26 +145,26 @@ public class LearningBasedWB extends WhiteBalancer {
 
 
 
-    // C++:  float cv::xphoto::LearningBasedWB::getSaturationThreshold()
-    private static native float getSaturationThreshold_0(long nativeObj);
-
-    // C++:  int cv::xphoto::LearningBasedWB::getHistBinNum()
-    private static native int getHistBinNum_0(long nativeObj);
+    // C++:  void cv::xphoto::LearningBasedWB::extractSimpleFeatures(Mat src, Mat& dst)
+    private static native void extractSimpleFeatures_0(long nativeObj, long src_nativeObj, long dst_nativeObj);
 
     // C++:  int cv::xphoto::LearningBasedWB::getRangeMaxVal()
     private static native int getRangeMaxVal_0(long nativeObj);
 
-    // C++:  void cv::xphoto::LearningBasedWB::extractSimpleFeatures(Mat src, Mat& dst)
-    private static native void extractSimpleFeatures_0(long nativeObj, long src_nativeObj, long dst_nativeObj);
-
-    // C++:  void cv::xphoto::LearningBasedWB::setHistBinNum(int val)
-    private static native void setHistBinNum_0(long nativeObj, int val);
-
     // C++:  void cv::xphoto::LearningBasedWB::setRangeMaxVal(int val)
     private static native void setRangeMaxVal_0(long nativeObj, int val);
 
+    // C++:  float cv::xphoto::LearningBasedWB::getSaturationThreshold()
+    private static native float getSaturationThreshold_0(long nativeObj);
+
     // C++:  void cv::xphoto::LearningBasedWB::setSaturationThreshold(float val)
     private static native void setSaturationThreshold_0(long nativeObj, float val);
+
+    // C++:  int cv::xphoto::LearningBasedWB::getHistBinNum()
+    private static native int getHistBinNum_0(long nativeObj);
+
+    // C++:  void cv::xphoto::LearningBasedWB::setHistBinNum(int val)
+    private static native void setHistBinNum_0(long nativeObj, int val);
 
     // native support for java finalize()
     private static native void delete(long nativeObj);

@@ -45,6 +45,24 @@ public class Facemark extends Algorithm {
     public static Facemark __fromPtr__(long addr) { return new Facemark(addr); }
 
     //
+    // C++:  void cv::face::Facemark::loadModel(String model)
+    //
+
+    /**
+     * A function to load the trained model before the fitting process.
+     *     @param model A string represent the filename of a trained model.
+     *
+     *     &lt;B&gt;Example of usage&lt;/B&gt;
+     *     <code>
+     *     facemark-&gt;loadModel("../data/lbf.model");
+     *     </code>
+     */
+    public void loadModel(String model) {
+        loadModel_0(nativeObj, model);
+    }
+
+
+    //
     // C++:  bool cv::face::Facemark::fit(Mat image, vector_Rect faces, vector_vector_Point2f& landmarks)
     //
 
@@ -74,24 +92,6 @@ public class Facemark extends Algorithm {
     }
 
 
-    //
-    // C++:  void cv::face::Facemark::loadModel(String model)
-    //
-
-    /**
-     * A function to load the trained model before the fitting process.
-     *     @param model A string represent the filename of a trained model.
-     *
-     *     &lt;B&gt;Example of usage&lt;/B&gt;
-     *     <code>
-     *     facemark-&gt;loadModel("../data/lbf.model");
-     *     </code>
-     */
-    public void loadModel(String model) {
-        loadModel_0(nativeObj, model);
-    }
-
-
     @Override
     protected void finalize() throws Throwable {
         delete(nativeObj);
@@ -99,11 +99,11 @@ public class Facemark extends Algorithm {
 
 
 
-    // C++:  bool cv::face::Facemark::fit(Mat image, vector_Rect faces, vector_vector_Point2f& landmarks)
-    private static native boolean fit_0(long nativeObj, long image_nativeObj, long faces_mat_nativeObj, long landmarks_mat_nativeObj);
-
     // C++:  void cv::face::Facemark::loadModel(String model)
     private static native void loadModel_0(long nativeObj, String model);
+
+    // C++:  bool cv::face::Facemark::fit(Mat image, vector_Rect faces, vector_vector_Point2f& landmarks)
+    private static native boolean fit_0(long nativeObj, long image_nativeObj, long faces_mat_nativeObj, long landmarks_mat_nativeObj);
 
     // native support for java finalize()
     private static native void delete(long nativeObj);

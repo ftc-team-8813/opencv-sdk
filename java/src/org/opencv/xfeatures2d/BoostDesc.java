@@ -62,20 +62,20 @@ public class BoostDesc extends Feature2D {
 
 
     //
+    // C++:  void cv::xfeatures2d::BoostDesc::setUseScaleOrientation(bool use_scale_orientation)
+    //
+
+    public void setUseScaleOrientation(boolean use_scale_orientation) {
+        setUseScaleOrientation_0(nativeObj, use_scale_orientation);
+    }
+
+
+    //
     // C++:  bool cv::xfeatures2d::BoostDesc::getUseScaleOrientation()
     //
 
     public boolean getUseScaleOrientation() {
         return getUseScaleOrientation_0(nativeObj);
-    }
-
-
-    //
-    // C++:  float cv::xfeatures2d::BoostDesc::getScaleFactor()
-    //
-
-    public float getScaleFactor() {
-        return getScaleFactor_0(nativeObj);
     }
 
 
@@ -89,11 +89,11 @@ public class BoostDesc extends Feature2D {
 
 
     //
-    // C++:  void cv::xfeatures2d::BoostDesc::setUseScaleOrientation(bool use_scale_orientation)
+    // C++:  float cv::xfeatures2d::BoostDesc::getScaleFactor()
     //
 
-    public void setUseScaleOrientation(boolean use_scale_orientation) {
-        setUseScaleOrientation_0(nativeObj, use_scale_orientation);
+    public float getScaleFactor() {
+        return getScaleFactor_0(nativeObj);
     }
 
 
@@ -110,17 +110,17 @@ public class BoostDesc extends Feature2D {
     private static native long create_2(int desc);
     private static native long create_3();
 
+    // C++:  void cv::xfeatures2d::BoostDesc::setUseScaleOrientation(bool use_scale_orientation)
+    private static native void setUseScaleOrientation_0(long nativeObj, boolean use_scale_orientation);
+
     // C++:  bool cv::xfeatures2d::BoostDesc::getUseScaleOrientation()
     private static native boolean getUseScaleOrientation_0(long nativeObj);
-
-    // C++:  float cv::xfeatures2d::BoostDesc::getScaleFactor()
-    private static native float getScaleFactor_0(long nativeObj);
 
     // C++:  void cv::xfeatures2d::BoostDesc::setScaleFactor(float scale_factor)
     private static native void setScaleFactor_0(long nativeObj, float scale_factor);
 
-    // C++:  void cv::xfeatures2d::BoostDesc::setUseScaleOrientation(bool use_scale_orientation)
-    private static native void setUseScaleOrientation_0(long nativeObj, boolean use_scale_orientation);
+    // C++:  float cv::xfeatures2d::BoostDesc::getScaleFactor()
+    private static native float getScaleFactor_0(long nativeObj);
 
     // native support for java finalize()
     private static native void delete(long nativeObj);

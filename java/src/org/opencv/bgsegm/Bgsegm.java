@@ -15,10 +15,110 @@ import org.opencv.core.Mat;
 
 public class Bgsegm {
 
-    // C++: enum LSBPCameraMotionCompensation
+    // C++: enum LSBPCameraMotionCompensation (cv.bgsegm.LSBPCameraMotionCompensation)
     public static final int
             LSBP_CAMERA_MOTION_COMPENSATION_NONE = 0,
             LSBP_CAMERA_MOTION_COMPENSATION_LK = 0+1;
+
+
+    //
+    // C++:  Ptr_BackgroundSubtractorMOG cv::bgsegm::createBackgroundSubtractorMOG(int history = 200, int nmixtures = 5, double backgroundRatio = 0.7, double noiseSigma = 0)
+    //
+
+    /**
+     * Creates mixture-of-gaussian background subtractor
+     *
+     * @param history Length of the history.
+     * @param nmixtures Number of Gaussian mixtures.
+     * @param backgroundRatio Background ratio.
+     * @param noiseSigma Noise strength (standard deviation of the brightness or each color channel). 0
+     * means some automatic value.
+     * @return automatically generated
+     */
+    public static BackgroundSubtractorMOG createBackgroundSubtractorMOG(int history, int nmixtures, double backgroundRatio, double noiseSigma) {
+        return BackgroundSubtractorMOG.__fromPtr__(createBackgroundSubtractorMOG_0(history, nmixtures, backgroundRatio, noiseSigma));
+    }
+
+    /**
+     * Creates mixture-of-gaussian background subtractor
+     *
+     * @param history Length of the history.
+     * @param nmixtures Number of Gaussian mixtures.
+     * @param backgroundRatio Background ratio.
+     * means some automatic value.
+     * @return automatically generated
+     */
+    public static BackgroundSubtractorMOG createBackgroundSubtractorMOG(int history, int nmixtures, double backgroundRatio) {
+        return BackgroundSubtractorMOG.__fromPtr__(createBackgroundSubtractorMOG_1(history, nmixtures, backgroundRatio));
+    }
+
+    /**
+     * Creates mixture-of-gaussian background subtractor
+     *
+     * @param history Length of the history.
+     * @param nmixtures Number of Gaussian mixtures.
+     * means some automatic value.
+     * @return automatically generated
+     */
+    public static BackgroundSubtractorMOG createBackgroundSubtractorMOG(int history, int nmixtures) {
+        return BackgroundSubtractorMOG.__fromPtr__(createBackgroundSubtractorMOG_2(history, nmixtures));
+    }
+
+    /**
+     * Creates mixture-of-gaussian background subtractor
+     *
+     * @param history Length of the history.
+     * means some automatic value.
+     * @return automatically generated
+     */
+    public static BackgroundSubtractorMOG createBackgroundSubtractorMOG(int history) {
+        return BackgroundSubtractorMOG.__fromPtr__(createBackgroundSubtractorMOG_3(history));
+    }
+
+    /**
+     * Creates mixture-of-gaussian background subtractor
+     *
+     * means some automatic value.
+     * @return automatically generated
+     */
+    public static BackgroundSubtractorMOG createBackgroundSubtractorMOG() {
+        return BackgroundSubtractorMOG.__fromPtr__(createBackgroundSubtractorMOG_4());
+    }
+
+
+    //
+    // C++:  Ptr_BackgroundSubtractorGMG cv::bgsegm::createBackgroundSubtractorGMG(int initializationFrames = 120, double decisionThreshold = 0.8)
+    //
+
+    /**
+     * Creates a GMG Background Subtractor
+     *
+     * @param initializationFrames number of frames used to initialize the background models.
+     * @param decisionThreshold Threshold value, above which it is marked foreground, else background.
+     * @return automatically generated
+     */
+    public static BackgroundSubtractorGMG createBackgroundSubtractorGMG(int initializationFrames, double decisionThreshold) {
+        return BackgroundSubtractorGMG.__fromPtr__(createBackgroundSubtractorGMG_0(initializationFrames, decisionThreshold));
+    }
+
+    /**
+     * Creates a GMG Background Subtractor
+     *
+     * @param initializationFrames number of frames used to initialize the background models.
+     * @return automatically generated
+     */
+    public static BackgroundSubtractorGMG createBackgroundSubtractorGMG(int initializationFrames) {
+        return BackgroundSubtractorGMG.__fromPtr__(createBackgroundSubtractorGMG_1(initializationFrames));
+    }
+
+    /**
+     * Creates a GMG Background Subtractor
+     *
+     * @return automatically generated
+     */
+    public static BackgroundSubtractorGMG createBackgroundSubtractorGMG() {
+        return BackgroundSubtractorGMG.__fromPtr__(createBackgroundSubtractorGMG_2());
+    }
 
 
     //
@@ -78,41 +178,6 @@ public class Bgsegm {
      */
     public static BackgroundSubtractorCNT createBackgroundSubtractorCNT() {
         return BackgroundSubtractorCNT.__fromPtr__(createBackgroundSubtractorCNT_4());
-    }
-
-
-    //
-    // C++:  Ptr_BackgroundSubtractorGMG cv::bgsegm::createBackgroundSubtractorGMG(int initializationFrames = 120, double decisionThreshold = 0.8)
-    //
-
-    /**
-     * Creates a GMG Background Subtractor
-     *
-     * @param initializationFrames number of frames used to initialize the background models.
-     * @param decisionThreshold Threshold value, above which it is marked foreground, else background.
-     * @return automatically generated
-     */
-    public static BackgroundSubtractorGMG createBackgroundSubtractorGMG(int initializationFrames, double decisionThreshold) {
-        return BackgroundSubtractorGMG.__fromPtr__(createBackgroundSubtractorGMG_0(initializationFrames, decisionThreshold));
-    }
-
-    /**
-     * Creates a GMG Background Subtractor
-     *
-     * @param initializationFrames number of frames used to initialize the background models.
-     * @return automatically generated
-     */
-    public static BackgroundSubtractorGMG createBackgroundSubtractorGMG(int initializationFrames) {
-        return BackgroundSubtractorGMG.__fromPtr__(createBackgroundSubtractorGMG_1(initializationFrames));
-    }
-
-    /**
-     * Creates a GMG Background Subtractor
-     *
-     * @return automatically generated
-     */
-    public static BackgroundSubtractorGMG createBackgroundSubtractorGMG() {
-        return BackgroundSubtractorGMG.__fromPtr__(createBackgroundSubtractorGMG_2());
     }
 
 
@@ -570,71 +635,6 @@ public class Bgsegm {
 
 
     //
-    // C++:  Ptr_BackgroundSubtractorMOG cv::bgsegm::createBackgroundSubtractorMOG(int history = 200, int nmixtures = 5, double backgroundRatio = 0.7, double noiseSigma = 0)
-    //
-
-    /**
-     * Creates mixture-of-gaussian background subtractor
-     *
-     * @param history Length of the history.
-     * @param nmixtures Number of Gaussian mixtures.
-     * @param backgroundRatio Background ratio.
-     * @param noiseSigma Noise strength (standard deviation of the brightness or each color channel). 0
-     * means some automatic value.
-     * @return automatically generated
-     */
-    public static BackgroundSubtractorMOG createBackgroundSubtractorMOG(int history, int nmixtures, double backgroundRatio, double noiseSigma) {
-        return BackgroundSubtractorMOG.__fromPtr__(createBackgroundSubtractorMOG_0(history, nmixtures, backgroundRatio, noiseSigma));
-    }
-
-    /**
-     * Creates mixture-of-gaussian background subtractor
-     *
-     * @param history Length of the history.
-     * @param nmixtures Number of Gaussian mixtures.
-     * @param backgroundRatio Background ratio.
-     * means some automatic value.
-     * @return automatically generated
-     */
-    public static BackgroundSubtractorMOG createBackgroundSubtractorMOG(int history, int nmixtures, double backgroundRatio) {
-        return BackgroundSubtractorMOG.__fromPtr__(createBackgroundSubtractorMOG_1(history, nmixtures, backgroundRatio));
-    }
-
-    /**
-     * Creates mixture-of-gaussian background subtractor
-     *
-     * @param history Length of the history.
-     * @param nmixtures Number of Gaussian mixtures.
-     * means some automatic value.
-     * @return automatically generated
-     */
-    public static BackgroundSubtractorMOG createBackgroundSubtractorMOG(int history, int nmixtures) {
-        return BackgroundSubtractorMOG.__fromPtr__(createBackgroundSubtractorMOG_2(history, nmixtures));
-    }
-
-    /**
-     * Creates mixture-of-gaussian background subtractor
-     *
-     * @param history Length of the history.
-     * means some automatic value.
-     * @return automatically generated
-     */
-    public static BackgroundSubtractorMOG createBackgroundSubtractorMOG(int history) {
-        return BackgroundSubtractorMOG.__fromPtr__(createBackgroundSubtractorMOG_3(history));
-    }
-
-    /**
-     * Creates mixture-of-gaussian background subtractor
-     *
-     * means some automatic value.
-     * @return automatically generated
-     */
-    public static BackgroundSubtractorMOG createBackgroundSubtractorMOG() {
-        return BackgroundSubtractorMOG.__fromPtr__(createBackgroundSubtractorMOG_4());
-    }
-
-
-    //
     // C++:  Ptr_SyntheticSequenceGenerator cv::bgsegm::createSyntheticSequenceGenerator(Mat background, Mat object, double amplitude = 2.0, double wavelength = 20.0, double wavespeed = 0.2, double objspeed = 6.0)
     //
 
@@ -706,17 +706,24 @@ public class Bgsegm {
 
 
 
+    // C++:  Ptr_BackgroundSubtractorMOG cv::bgsegm::createBackgroundSubtractorMOG(int history = 200, int nmixtures = 5, double backgroundRatio = 0.7, double noiseSigma = 0)
+    private static native long createBackgroundSubtractorMOG_0(int history, int nmixtures, double backgroundRatio, double noiseSigma);
+    private static native long createBackgroundSubtractorMOG_1(int history, int nmixtures, double backgroundRatio);
+    private static native long createBackgroundSubtractorMOG_2(int history, int nmixtures);
+    private static native long createBackgroundSubtractorMOG_3(int history);
+    private static native long createBackgroundSubtractorMOG_4();
+
+    // C++:  Ptr_BackgroundSubtractorGMG cv::bgsegm::createBackgroundSubtractorGMG(int initializationFrames = 120, double decisionThreshold = 0.8)
+    private static native long createBackgroundSubtractorGMG_0(int initializationFrames, double decisionThreshold);
+    private static native long createBackgroundSubtractorGMG_1(int initializationFrames);
+    private static native long createBackgroundSubtractorGMG_2();
+
     // C++:  Ptr_BackgroundSubtractorCNT cv::bgsegm::createBackgroundSubtractorCNT(int minPixelStability = 15, bool useHistory = true, int maxPixelStability = 15*60, bool isParallel = true)
     private static native long createBackgroundSubtractorCNT_0(int minPixelStability, boolean useHistory, int maxPixelStability, boolean isParallel);
     private static native long createBackgroundSubtractorCNT_1(int minPixelStability, boolean useHistory, int maxPixelStability);
     private static native long createBackgroundSubtractorCNT_2(int minPixelStability, boolean useHistory);
     private static native long createBackgroundSubtractorCNT_3(int minPixelStability);
     private static native long createBackgroundSubtractorCNT_4();
-
-    // C++:  Ptr_BackgroundSubtractorGMG cv::bgsegm::createBackgroundSubtractorGMG(int initializationFrames = 120, double decisionThreshold = 0.8)
-    private static native long createBackgroundSubtractorGMG_0(int initializationFrames, double decisionThreshold);
-    private static native long createBackgroundSubtractorGMG_1(int initializationFrames);
-    private static native long createBackgroundSubtractorGMG_2();
 
     // C++:  Ptr_BackgroundSubtractorGSOC cv::bgsegm::createBackgroundSubtractorGSOC(int mc = LSBP_CAMERA_MOTION_COMPENSATION_NONE, int nSamples = 20, float replaceRate = 0.003f, float propagationRate = 0.01f, int hitsThreshold = 32, float alpha = 0.01f, float beta = 0.0022f, float blinkingSupressionDecay = 0.1f, float blinkingSupressionMultiplier = 0.1f, float noiseRemovalThresholdFacBG = 0.0004f, float noiseRemovalThresholdFacFG = 0.0008f)
     private static native long createBackgroundSubtractorGSOC_0(int mc, int nSamples, float replaceRate, float propagationRate, int hitsThreshold, float alpha, float beta, float blinkingSupressionDecay, float blinkingSupressionMultiplier, float noiseRemovalThresholdFacBG, float noiseRemovalThresholdFacFG);
@@ -747,13 +754,6 @@ public class Bgsegm {
     private static native long createBackgroundSubtractorLSBP_11(int mc, int nSamples);
     private static native long createBackgroundSubtractorLSBP_12(int mc);
     private static native long createBackgroundSubtractorLSBP_13();
-
-    // C++:  Ptr_BackgroundSubtractorMOG cv::bgsegm::createBackgroundSubtractorMOG(int history = 200, int nmixtures = 5, double backgroundRatio = 0.7, double noiseSigma = 0)
-    private static native long createBackgroundSubtractorMOG_0(int history, int nmixtures, double backgroundRatio, double noiseSigma);
-    private static native long createBackgroundSubtractorMOG_1(int history, int nmixtures, double backgroundRatio);
-    private static native long createBackgroundSubtractorMOG_2(int history, int nmixtures);
-    private static native long createBackgroundSubtractorMOG_3(int history);
-    private static native long createBackgroundSubtractorMOG_4();
 
     // C++:  Ptr_SyntheticSequenceGenerator cv::bgsegm::createSyntheticSequenceGenerator(Mat background, Mat object, double amplitude = 2.0, double wavelength = 20.0, double wavespeed = 0.2, double objspeed = 6.0)
     private static native long createSyntheticSequenceGenerator_0(long background_nativeObj, long object_nativeObj, double amplitude, double wavelength, double wavespeed, double objspeed);

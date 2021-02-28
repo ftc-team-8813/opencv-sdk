@@ -39,20 +39,6 @@ public class TransientAreasSegmentationModule extends Algorithm {
     public static TransientAreasSegmentationModule __fromPtr__(long addr) { return new TransientAreasSegmentationModule(addr); }
 
     //
-    // C++: static Ptr_TransientAreasSegmentationModule cv::bioinspired::TransientAreasSegmentationModule::create(Size inputSize)
-    //
-
-    /**
-     * allocator
-     *     @param inputSize : size of the images input to segment (output will be the same size)
-     * @return automatically generated
-     */
-    public static TransientAreasSegmentationModule create(Size inputSize) {
-        return TransientAreasSegmentationModule.__fromPtr__(create_0(inputSize.width, inputSize.height));
-    }
-
-
-    //
     // C++:  Size cv::bioinspired::TransientAreasSegmentationModule::getSize()
     //
 
@@ -62,67 +48,6 @@ public class TransientAreasSegmentationModule extends Algorithm {
      */
     public Size getSize() {
         return new Size(getSize_0(nativeObj));
-    }
-
-
-    //
-    // C++:  String cv::bioinspired::TransientAreasSegmentationModule::printSetup()
-    //
-
-    /**
-     * parameters setup display method
-     *     @return a string which contains formatted parameters information
-     */
-    public String printSetup() {
-        return printSetup_0(nativeObj);
-    }
-
-
-    //
-    // C++:  void cv::bioinspired::TransientAreasSegmentationModule::clearAllBuffers()
-    //
-
-    /**
-     * cleans all the buffers of the instance
-     */
-    public void clearAllBuffers() {
-        clearAllBuffers_0(nativeObj);
-    }
-
-
-    //
-    // C++:  void cv::bioinspired::TransientAreasSegmentationModule::getSegmentationPicture(Mat& transientAreas)
-    //
-
-    /**
-     * access function
-     *     return the last segmentation result: a boolean picture which is resampled between 0 and 255 for a display purpose
-     * @param transientAreas automatically generated
-     */
-    public void getSegmentationPicture(Mat transientAreas) {
-        getSegmentationPicture_0(nativeObj, transientAreas.nativeObj);
-    }
-
-
-    //
-    // C++:  void cv::bioinspired::TransientAreasSegmentationModule::run(Mat inputToSegment, int channelIndex = 0)
-    //
-
-    /**
-     * main processing method, get result using methods getSegmentationPicture()
-     *     @param inputToSegment : the image to process, it must match the instance buffer size !
-     *     @param channelIndex : the channel to process in case of multichannel images
-     */
-    public void run(Mat inputToSegment, int channelIndex) {
-        run_0(nativeObj, inputToSegment.nativeObj, channelIndex);
-    }
-
-    /**
-     * main processing method, get result using methods getSegmentationPicture()
-     *     @param inputToSegment : the image to process, it must match the instance buffer size !
-     */
-    public void run(Mat inputToSegment) {
-        run_1(nativeObj, inputToSegment.nativeObj);
     }
 
 
@@ -183,6 +108,19 @@ public class TransientAreasSegmentationModule extends Algorithm {
 
 
     //
+    // C++:  String cv::bioinspired::TransientAreasSegmentationModule::printSetup()
+    //
+
+    /**
+     * parameters setup display method
+     *     @return a string which contains formatted parameters information
+     */
+    public String printSetup() {
+        return printSetup_0(nativeObj);
+    }
+
+
+    //
     // C++:  void cv::bioinspired::TransientAreasSegmentationModule::write(String fs)
     //
 
@@ -195,6 +133,68 @@ public class TransientAreasSegmentationModule extends Algorithm {
     }
 
 
+    //
+    // C++:  void cv::bioinspired::TransientAreasSegmentationModule::run(Mat inputToSegment, int channelIndex = 0)
+    //
+
+    /**
+     * main processing method, get result using methods getSegmentationPicture()
+     *     @param inputToSegment : the image to process, it must match the instance buffer size !
+     *     @param channelIndex : the channel to process in case of multichannel images
+     */
+    public void run(Mat inputToSegment, int channelIndex) {
+        run_0(nativeObj, inputToSegment.nativeObj, channelIndex);
+    }
+
+    /**
+     * main processing method, get result using methods getSegmentationPicture()
+     *     @param inputToSegment : the image to process, it must match the instance buffer size !
+     */
+    public void run(Mat inputToSegment) {
+        run_1(nativeObj, inputToSegment.nativeObj);
+    }
+
+
+    //
+    // C++:  void cv::bioinspired::TransientAreasSegmentationModule::getSegmentationPicture(Mat& transientAreas)
+    //
+
+    /**
+     * access function
+     *     return the last segmentation result: a boolean picture which is resampled between 0 and 255 for a display purpose
+     * @param transientAreas automatically generated
+     */
+    public void getSegmentationPicture(Mat transientAreas) {
+        getSegmentationPicture_0(nativeObj, transientAreas.nativeObj);
+    }
+
+
+    //
+    // C++:  void cv::bioinspired::TransientAreasSegmentationModule::clearAllBuffers()
+    //
+
+    /**
+     * cleans all the buffers of the instance
+     */
+    public void clearAllBuffers() {
+        clearAllBuffers_0(nativeObj);
+    }
+
+
+    //
+    // C++: static Ptr_TransientAreasSegmentationModule cv::bioinspired::TransientAreasSegmentationModule::create(Size inputSize)
+    //
+
+    /**
+     * allocator
+     *     @param inputSize : size of the images input to segment (output will be the same size)
+     * @return automatically generated
+     */
+    public static TransientAreasSegmentationModule create(Size inputSize) {
+        return TransientAreasSegmentationModule.__fromPtr__(create_0(inputSize.width, inputSize.height));
+    }
+
+
     @Override
     protected void finalize() throws Throwable {
         delete(nativeObj);
@@ -202,32 +202,32 @@ public class TransientAreasSegmentationModule extends Algorithm {
 
 
 
-    // C++: static Ptr_TransientAreasSegmentationModule cv::bioinspired::TransientAreasSegmentationModule::create(Size inputSize)
-    private static native long create_0(double inputSize_width, double inputSize_height);
-
     // C++:  Size cv::bioinspired::TransientAreasSegmentationModule::getSize()
     private static native double[] getSize_0(long nativeObj);
-
-    // C++:  String cv::bioinspired::TransientAreasSegmentationModule::printSetup()
-    private static native String printSetup_0(long nativeObj);
-
-    // C++:  void cv::bioinspired::TransientAreasSegmentationModule::clearAllBuffers()
-    private static native void clearAllBuffers_0(long nativeObj);
-
-    // C++:  void cv::bioinspired::TransientAreasSegmentationModule::getSegmentationPicture(Mat& transientAreas)
-    private static native void getSegmentationPicture_0(long nativeObj, long transientAreas_nativeObj);
-
-    // C++:  void cv::bioinspired::TransientAreasSegmentationModule::run(Mat inputToSegment, int channelIndex = 0)
-    private static native void run_0(long nativeObj, long inputToSegment_nativeObj, int channelIndex);
-    private static native void run_1(long nativeObj, long inputToSegment_nativeObj);
 
     // C++:  void cv::bioinspired::TransientAreasSegmentationModule::setup(String segmentationParameterFile = "", bool applyDefaultSetupOnFailure = true)
     private static native void setup_0(long nativeObj, String segmentationParameterFile, boolean applyDefaultSetupOnFailure);
     private static native void setup_1(long nativeObj, String segmentationParameterFile);
     private static native void setup_2(long nativeObj);
 
+    // C++:  String cv::bioinspired::TransientAreasSegmentationModule::printSetup()
+    private static native String printSetup_0(long nativeObj);
+
     // C++:  void cv::bioinspired::TransientAreasSegmentationModule::write(String fs)
     private static native void write_0(long nativeObj, String fs);
+
+    // C++:  void cv::bioinspired::TransientAreasSegmentationModule::run(Mat inputToSegment, int channelIndex = 0)
+    private static native void run_0(long nativeObj, long inputToSegment_nativeObj, int channelIndex);
+    private static native void run_1(long nativeObj, long inputToSegment_nativeObj);
+
+    // C++:  void cv::bioinspired::TransientAreasSegmentationModule::getSegmentationPicture(Mat& transientAreas)
+    private static native void getSegmentationPicture_0(long nativeObj, long transientAreas_nativeObj);
+
+    // C++:  void cv::bioinspired::TransientAreasSegmentationModule::clearAllBuffers()
+    private static native void clearAllBuffers_0(long nativeObj);
+
+    // C++: static Ptr_TransientAreasSegmentationModule cv::bioinspired::TransientAreasSegmentationModule::create(Size inputSize)
+    private static native long create_0(double inputSize_width, double inputSize_height);
 
     // native support for java finalize()
     private static native void delete(long nativeObj);

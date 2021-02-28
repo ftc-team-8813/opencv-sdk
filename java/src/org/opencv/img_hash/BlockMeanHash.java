@@ -25,15 +25,15 @@ public class BlockMeanHash extends ImgHashBase {
     public static BlockMeanHash __fromPtr__(long addr) { return new BlockMeanHash(addr); }
 
     //
-    // C++: static Ptr_BlockMeanHash cv::img_hash::BlockMeanHash::create(int mode = BLOCK_MEAN_HASH_MODE_0)
+    // C++:  void cv::img_hash::BlockMeanHash::setMode(int mode)
     //
 
-    public static BlockMeanHash create(int mode) {
-        return BlockMeanHash.__fromPtr__(create_0(mode));
-    }
-
-    public static BlockMeanHash create() {
-        return BlockMeanHash.__fromPtr__(create_1());
+    /**
+     * Create BlockMeanHash object
+     *         @param mode the mode
+     */
+    public void setMode(int mode) {
+        setMode_0(nativeObj, mode);
     }
 
 
@@ -47,15 +47,15 @@ public class BlockMeanHash extends ImgHashBase {
 
 
     //
-    // C++:  void cv::img_hash::BlockMeanHash::setMode(int mode)
+    // C++: static Ptr_BlockMeanHash cv::img_hash::BlockMeanHash::create(int mode = BLOCK_MEAN_HASH_MODE_0)
     //
 
-    /**
-     * Create BlockMeanHash object
-     *         @param mode the mode
-     */
-    public void setMode(int mode) {
-        setMode_0(nativeObj, mode);
+    public static BlockMeanHash create(int mode) {
+        return BlockMeanHash.__fromPtr__(create_0(mode));
+    }
+
+    public static BlockMeanHash create() {
+        return BlockMeanHash.__fromPtr__(create_1());
     }
 
 
@@ -66,15 +66,15 @@ public class BlockMeanHash extends ImgHashBase {
 
 
 
-    // C++: static Ptr_BlockMeanHash cv::img_hash::BlockMeanHash::create(int mode = BLOCK_MEAN_HASH_MODE_0)
-    private static native long create_0(int mode);
-    private static native long create_1();
+    // C++:  void cv::img_hash::BlockMeanHash::setMode(int mode)
+    private static native void setMode_0(long nativeObj, int mode);
 
     // C++:  vector_double cv::img_hash::BlockMeanHash::getMean()
     private static native long getMean_0(long nativeObj);
 
-    // C++:  void cv::img_hash::BlockMeanHash::setMode(int mode)
-    private static native void setMode_0(long nativeObj, int mode);
+    // C++: static Ptr_BlockMeanHash cv::img_hash::BlockMeanHash::create(int mode = BLOCK_MEAN_HASH_MODE_0)
+    private static native long create_0(int mode);
+    private static native long create_1();
 
     // native support for java finalize()
     private static native void delete(long nativeObj);

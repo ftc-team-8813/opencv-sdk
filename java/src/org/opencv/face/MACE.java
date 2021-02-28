@@ -70,66 +70,6 @@ public class MACE extends Algorithm {
     public static MACE __fromPtr__(long addr) { return new MACE(addr); }
 
     //
-    // C++: static Ptr_MACE cv::face::MACE::create(int IMGSIZE = 64)
-    //
-
-    /**
-     * constructor
-     *     @param IMGSIZE  images will get resized to this (should be an even number)
-     * @return automatically generated
-     */
-    public static MACE create(int IMGSIZE) {
-        return MACE.__fromPtr__(create_0(IMGSIZE));
-    }
-
-    /**
-     * constructor
-     * @return automatically generated
-     */
-    public static MACE create() {
-        return MACE.__fromPtr__(create_1());
-    }
-
-
-    //
-    // C++: static Ptr_MACE cv::face::MACE::load(String filename, String objname = String())
-    //
-
-    /**
-     * constructor
-     *     @param filename  build a new MACE instance from a pre-serialized FileStorage
-     *     @param objname (optional) top-level node in the FileStorage
-     * @return automatically generated
-     */
-    public static MACE load(String filename, String objname) {
-        return MACE.__fromPtr__(load_0(filename, objname));
-    }
-
-    /**
-     * constructor
-     *     @param filename  build a new MACE instance from a pre-serialized FileStorage
-     * @return automatically generated
-     */
-    public static MACE load(String filename) {
-        return MACE.__fromPtr__(load_1(filename));
-    }
-
-
-    //
-    // C++:  bool cv::face::MACE::same(Mat query)
-    //
-
-    /**
-     * correlate query img and threshold to min class value
-     *     @param query  a Mat with query image
-     * @return automatically generated
-     */
-    public boolean same(Mat query) {
-        return same_0(nativeObj, query.nativeObj);
-    }
-
-
-    //
     // C++:  void cv::face::MACE::salt(String passphrase)
     //
 
@@ -158,6 +98,66 @@ public class MACE extends Algorithm {
     }
 
 
+    //
+    // C++:  bool cv::face::MACE::same(Mat query)
+    //
+
+    /**
+     * correlate query img and threshold to min class value
+     *     @param query  a Mat with query image
+     * @return automatically generated
+     */
+    public boolean same(Mat query) {
+        return same_0(nativeObj, query.nativeObj);
+    }
+
+
+    //
+    // C++: static Ptr_MACE cv::face::MACE::load(String filename, String objname = String())
+    //
+
+    /**
+     * constructor
+     *     @param filename  build a new MACE instance from a pre-serialized FileStorage
+     *     @param objname (optional) top-level node in the FileStorage
+     * @return automatically generated
+     */
+    public static MACE load(String filename, String objname) {
+        return MACE.__fromPtr__(load_0(filename, objname));
+    }
+
+    /**
+     * constructor
+     *     @param filename  build a new MACE instance from a pre-serialized FileStorage
+     * @return automatically generated
+     */
+    public static MACE load(String filename) {
+        return MACE.__fromPtr__(load_1(filename));
+    }
+
+
+    //
+    // C++: static Ptr_MACE cv::face::MACE::create(int IMGSIZE = 64)
+    //
+
+    /**
+     * constructor
+     *     @param IMGSIZE  images will get resized to this (should be an even number)
+     * @return automatically generated
+     */
+    public static MACE create(int IMGSIZE) {
+        return MACE.__fromPtr__(create_0(IMGSIZE));
+    }
+
+    /**
+     * constructor
+     * @return automatically generated
+     */
+    public static MACE create() {
+        return MACE.__fromPtr__(create_1());
+    }
+
+
     @Override
     protected void finalize() throws Throwable {
         delete(nativeObj);
@@ -165,22 +165,22 @@ public class MACE extends Algorithm {
 
 
 
-    // C++: static Ptr_MACE cv::face::MACE::create(int IMGSIZE = 64)
-    private static native long create_0(int IMGSIZE);
-    private static native long create_1();
-
-    // C++: static Ptr_MACE cv::face::MACE::load(String filename, String objname = String())
-    private static native long load_0(String filename, String objname);
-    private static native long load_1(String filename);
-
-    // C++:  bool cv::face::MACE::same(Mat query)
-    private static native boolean same_0(long nativeObj, long query_nativeObj);
-
     // C++:  void cv::face::MACE::salt(String passphrase)
     private static native void salt_0(long nativeObj, String passphrase);
 
     // C++:  void cv::face::MACE::train(vector_Mat images)
     private static native void train_0(long nativeObj, long images_mat_nativeObj);
+
+    // C++:  bool cv::face::MACE::same(Mat query)
+    private static native boolean same_0(long nativeObj, long query_nativeObj);
+
+    // C++: static Ptr_MACE cv::face::MACE::load(String filename, String objname = String())
+    private static native long load_0(String filename, String objname);
+    private static native long load_1(String filename);
+
+    // C++: static Ptr_MACE cv::face::MACE::create(int IMGSIZE = 64)
+    private static native long create_0(int IMGSIZE);
+    private static native long create_1();
 
     // native support for java finalize()
     private static native void delete(long nativeObj);

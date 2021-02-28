@@ -42,6 +42,84 @@ public class SuperpixelSEEDS extends Algorithm {
 
 
     //
+    // C++:  void cv::ximgproc::SuperpixelSEEDS::iterate(Mat img, int num_iterations = 4)
+    //
+
+    /**
+     * Calculates the superpixel segmentation on a given image with the initialized
+     *     parameters in the SuperpixelSEEDS object.
+     *
+     *     This function can be called again for other images without the need of initializing the
+     *     algorithm with createSuperpixelSEEDS(). This save the computational cost of allocating memory
+     *     for all the structures of the algorithm.
+     *
+     *     @param img Input image. Supported formats: CV_8U, CV_16U, CV_32F. Image size &amp; number of
+     *     channels must match with the initialized image size &amp; channels with the function
+     *     createSuperpixelSEEDS(). It should be in HSV or Lab color space. Lab is a bit better, but also
+     *     slower.
+     *
+     *     @param num_iterations Number of pixel level iterations. Higher number improves the result.
+     *
+     *     The function computes the superpixels segmentation of an image with the parameters initialized
+     *     with the function createSuperpixelSEEDS(). The algorithms starts from a grid of superpixels and
+     *     then refines the boundaries by proposing updates of blocks of pixels that lie at the boundaries
+     *     from large to smaller size, finalizing with proposing pixel updates. An illustrative example
+     *     can be seen below.
+     *
+     *     ![image](pics/superpixels_blocks2.png)
+     */
+    public void iterate(Mat img, int num_iterations) {
+        iterate_0(nativeObj, img.nativeObj, num_iterations);
+    }
+
+    /**
+     * Calculates the superpixel segmentation on a given image with the initialized
+     *     parameters in the SuperpixelSEEDS object.
+     *
+     *     This function can be called again for other images without the need of initializing the
+     *     algorithm with createSuperpixelSEEDS(). This save the computational cost of allocating memory
+     *     for all the structures of the algorithm.
+     *
+     *     @param img Input image. Supported formats: CV_8U, CV_16U, CV_32F. Image size &amp; number of
+     *     channels must match with the initialized image size &amp; channels with the function
+     *     createSuperpixelSEEDS(). It should be in HSV or Lab color space. Lab is a bit better, but also
+     *     slower.
+     *
+     *
+     *     The function computes the superpixels segmentation of an image with the parameters initialized
+     *     with the function createSuperpixelSEEDS(). The algorithms starts from a grid of superpixels and
+     *     then refines the boundaries by proposing updates of blocks of pixels that lie at the boundaries
+     *     from large to smaller size, finalizing with proposing pixel updates. An illustrative example
+     *     can be seen below.
+     *
+     *     ![image](pics/superpixels_blocks2.png)
+     */
+    public void iterate(Mat img) {
+        iterate_1(nativeObj, img.nativeObj);
+    }
+
+
+    //
+    // C++:  void cv::ximgproc::SuperpixelSEEDS::getLabels(Mat& labels_out)
+    //
+
+    /**
+     * Returns the segmentation labeling of the image.
+     *
+     *     Each label represents a superpixel, and each pixel is assigned to one superpixel label.
+     *
+     *     @param labels_out Return: A CV_32UC1 integer array containing the labels of the superpixel
+     *     segmentation. The labels are in the range [0, getNumberOfSuperpixels()].
+     *
+     *     The function returns an image with ssthe labels of the superpixel segmentation. The labels are in
+     *     the range [0, getNumberOfSuperpixels()].
+     */
+    public void getLabels(Mat labels_out) {
+        getLabels_0(nativeObj, labels_out.nativeObj);
+    }
+
+
+    //
     // C++:  void cv::ximgproc::SuperpixelSEEDS::getLabelContourMask(Mat& image, bool thick_line = false)
     //
 
@@ -127,84 +205,6 @@ public class SuperpixelSEEDS extends Algorithm {
     }
 
 
-    //
-    // C++:  void cv::ximgproc::SuperpixelSEEDS::getLabels(Mat& labels_out)
-    //
-
-    /**
-     * Returns the segmentation labeling of the image.
-     *
-     *     Each label represents a superpixel, and each pixel is assigned to one superpixel label.
-     *
-     *     @param labels_out Return: A CV_32UC1 integer array containing the labels of the superpixel
-     *     segmentation. The labels are in the range [0, getNumberOfSuperpixels()].
-     *
-     *     The function returns an image with ssthe labels of the superpixel segmentation. The labels are in
-     *     the range [0, getNumberOfSuperpixels()].
-     */
-    public void getLabels(Mat labels_out) {
-        getLabels_0(nativeObj, labels_out.nativeObj);
-    }
-
-
-    //
-    // C++:  void cv::ximgproc::SuperpixelSEEDS::iterate(Mat img, int num_iterations = 4)
-    //
-
-    /**
-     * Calculates the superpixel segmentation on a given image with the initialized
-     *     parameters in the SuperpixelSEEDS object.
-     *
-     *     This function can be called again for other images without the need of initializing the
-     *     algorithm with createSuperpixelSEEDS(). This save the computational cost of allocating memory
-     *     for all the structures of the algorithm.
-     *
-     *     @param img Input image. Supported formats: CV_8U, CV_16U, CV_32F. Image size &amp; number of
-     *     channels must match with the initialized image size &amp; channels with the function
-     *     createSuperpixelSEEDS(). It should be in HSV or Lab color space. Lab is a bit better, but also
-     *     slower.
-     *
-     *     @param num_iterations Number of pixel level iterations. Higher number improves the result.
-     *
-     *     The function computes the superpixels segmentation of an image with the parameters initialized
-     *     with the function createSuperpixelSEEDS(). The algorithms starts from a grid of superpixels and
-     *     then refines the boundaries by proposing updates of blocks of pixels that lie at the boundaries
-     *     from large to smaller size, finalizing with proposing pixel updates. An illustrative example
-     *     can be seen below.
-     *
-     *     ![image](pics/superpixels_blocks2.png)
-     */
-    public void iterate(Mat img, int num_iterations) {
-        iterate_0(nativeObj, img.nativeObj, num_iterations);
-    }
-
-    /**
-     * Calculates the superpixel segmentation on a given image with the initialized
-     *     parameters in the SuperpixelSEEDS object.
-     *
-     *     This function can be called again for other images without the need of initializing the
-     *     algorithm with createSuperpixelSEEDS(). This save the computational cost of allocating memory
-     *     for all the structures of the algorithm.
-     *
-     *     @param img Input image. Supported formats: CV_8U, CV_16U, CV_32F. Image size &amp; number of
-     *     channels must match with the initialized image size &amp; channels with the function
-     *     createSuperpixelSEEDS(). It should be in HSV or Lab color space. Lab is a bit better, but also
-     *     slower.
-     *
-     *
-     *     The function computes the superpixels segmentation of an image with the parameters initialized
-     *     with the function createSuperpixelSEEDS(). The algorithms starts from a grid of superpixels and
-     *     then refines the boundaries by proposing updates of blocks of pixels that lie at the boundaries
-     *     from large to smaller size, finalizing with proposing pixel updates. An illustrative example
-     *     can be seen below.
-     *
-     *     ![image](pics/superpixels_blocks2.png)
-     */
-    public void iterate(Mat img) {
-        iterate_1(nativeObj, img.nativeObj);
-    }
-
-
     @Override
     protected void finalize() throws Throwable {
         delete(nativeObj);
@@ -215,16 +215,16 @@ public class SuperpixelSEEDS extends Algorithm {
     // C++:  int cv::ximgproc::SuperpixelSEEDS::getNumberOfSuperpixels()
     private static native int getNumberOfSuperpixels_0(long nativeObj);
 
-    // C++:  void cv::ximgproc::SuperpixelSEEDS::getLabelContourMask(Mat& image, bool thick_line = false)
-    private static native void getLabelContourMask_0(long nativeObj, long image_nativeObj, boolean thick_line);
-    private static native void getLabelContourMask_1(long nativeObj, long image_nativeObj);
+    // C++:  void cv::ximgproc::SuperpixelSEEDS::iterate(Mat img, int num_iterations = 4)
+    private static native void iterate_0(long nativeObj, long img_nativeObj, int num_iterations);
+    private static native void iterate_1(long nativeObj, long img_nativeObj);
 
     // C++:  void cv::ximgproc::SuperpixelSEEDS::getLabels(Mat& labels_out)
     private static native void getLabels_0(long nativeObj, long labels_out_nativeObj);
 
-    // C++:  void cv::ximgproc::SuperpixelSEEDS::iterate(Mat img, int num_iterations = 4)
-    private static native void iterate_0(long nativeObj, long img_nativeObj, int num_iterations);
-    private static native void iterate_1(long nativeObj, long img_nativeObj);
+    // C++:  void cv::ximgproc::SuperpixelSEEDS::getLabelContourMask(Mat& image, bool thick_line = false)
+    private static native void getLabelContourMask_0(long nativeObj, long image_nativeObj, boolean thick_line);
+    private static native void getLabelContourMask_1(long nativeObj, long image_nativeObj);
 
     // native support for java finalize()
     private static native void delete(long nativeObj);

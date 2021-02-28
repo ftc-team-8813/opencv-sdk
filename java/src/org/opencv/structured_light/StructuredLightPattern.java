@@ -21,13 +21,6 @@ public class StructuredLightPattern extends Algorithm {
     public static StructuredLightPattern __fromPtr__(long addr) { return new StructuredLightPattern(addr); }
 
     //
-    // C++:  bool cv::structured_light::StructuredLightPattern::decode(vector_vector_Mat patternImages, Mat& disparityMap, vector_Mat blackImages = vector_Mat(), vector_Mat whiteImages = vector_Mat(), int flags = DECODE_3D_UNDERWORLD)
-    //
-
-    // Unknown type 'vector_vector_Mat' (I), skipping the function
-
-
-    //
     // C++:  bool cv::structured_light::StructuredLightPattern::generate(vector_Mat& patternImages)
     //
 
@@ -44,6 +37,13 @@ public class StructuredLightPattern extends Algorithm {
         patternImages_mat.release();
         return retVal;
     }
+
+
+    //
+    // C++:  bool cv::structured_light::StructuredLightPattern::decode(vector_vector_Mat patternImages, Mat& disparityMap, vector_Mat blackImages = vector_Mat(), vector_Mat whiteImages = vector_Mat(), int flags = DECODE_3D_UNDERWORLD)
+    //
+
+    // Unknown type 'vector_vector_Mat' (I), skipping the function
 
 
     @Override
